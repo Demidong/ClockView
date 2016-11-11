@@ -241,18 +241,18 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
     public void run() {
         long start, end;
         while (flag) {
-            start = System.currentTimeMillis();
+  //          start = System.currentTimeMillis();
             draw();
           //  logic();
-            end = System.currentTimeMillis();
+  //          end = System.currentTimeMillis();
 
-            try {
-                if (end - start < 1000) {
-                    Thread.sleep(1000);
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                if (end - start < 1000) {
+//                    Thread.sleep(1000);
+//                }
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
         }
     }
 
