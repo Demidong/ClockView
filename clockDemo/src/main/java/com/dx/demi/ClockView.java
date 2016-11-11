@@ -60,7 +60,7 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
         mPointPaint.setColor(Color.BLACK);
         mPointPaint.setAntiAlias(true);
         mPointPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-        mPointPaint.setTextSize(22);
+        mPointPaint.setTextSize(30);
         mPointPaint.setTextAlign(Paint.Align.CENTER);
 
         setFocusable(true);
@@ -96,7 +96,7 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
         }
         setMeasuredDimension(mCanvasWidth = width + 4, mCanvasHeight = height + 4);
         mRadius = (int) (Math.min(width - getPaddingLeft() - getPaddingRight(),
-                height - getPaddingTop() - getPaddingBottom()) * 1.0f / 2)-4;
+                height - getPaddingTop() - getPaddingBottom()) * 1.0f / 2);
 
         caculateLength();
 
@@ -131,10 +131,14 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
     }
 
     private void drawContent(Canvas mCanvas) {
+        mHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        mMinute = Calendar.getInstance().get(Calendar.MINUTE);
+        mSecond = Calendar.getInstance().get(Calendar.SECOND);
         // 1.将坐标系原点移至去除内边距后的画布中心
         // 默认在画布左上角，这样做是为了更方便的绘制
-        mCanvas.drawColor(Color.GREEN);
-        mCanvas.translate(mCanvasWidth * 1.0f / 2 + getPaddingLeft() - getPaddingRight(), mCanvasHeight * 1.0f / 2 + getPaddingTop() - getPaddingBottom());
+
+        mCanvas.drawColor(Color.WHITE);
+        mCanvas.translate(mCanvasWidth * 1.0f / 2 - (getPaddingLeft() + getPaddingRight())/2, mCanvasHeight * 1.0f / 2 -( getPaddingTop() - getPaddingBottom())/2);
 // 2.绘制圆盘
         mPaint.setStrokeWidth(2f); // 画笔设置2个像素的宽度
         mCanvas.drawCircle(0, 0, mRadius, mPaint); // 到这一步就能知道第一步的好处了，否则害的去计算园的中心点坐标
@@ -162,6 +166,7 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
         }
 // 6.绘制上下午
         mCanvas.drawText(mHour < 12 ? "AM" : "PM", 0, mRadius * 1.5f / 4, mPointPaint);
+        mCanvas.drawText(mHour+":"+mMinute+":"+mSecond, 0, mRadius * 1.3f, mPointPaint);
 // 7.绘制时针
         Path path = new Path();
         path.moveTo(0, 0);
@@ -238,12 +243,12 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
         while (flag) {
             start = System.currentTimeMillis();
             draw();
-            logic();
+          //  logic();
             end = System.currentTimeMillis();
 
             try {
                 if (end - start < 1000) {
-                    Thread.sleep(1000 - (end - start));
+                    Thread.sleep(1000);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
