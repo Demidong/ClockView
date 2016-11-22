@@ -21,7 +21,6 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
     private static final int DEFAULT_RADIUS = 200;
     private Paint mPaint;//园和刻度的画笔
     private Paint mPointPaint; // 指针画笔
-    private int mCanvasWidth, mCanvasHeight;//画布的宽高
     private int mRadius = DEFAULT_RADIUS; //时钟的半径
     private int mSecondPointLength; //秒针长度
     private int mMinutePointLength;//分针长度
@@ -89,12 +88,12 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
         if (heightMode == MeasureSpec.EXACTLY) { //精确值 或matchParent
             height = heightSize;
         } else {
-            height = mRadius * 2 + getPaddingLeft() + getPaddingRight();
+            height = mRadius * 2 + getPaddingTop() + getPaddingBottom();
             if (heightMode == MeasureSpec.AT_MOST) {
                 height = Math.min(height, heightSize);
             }
         }
-        setMeasuredDimension(mCanvasWidth = width + 4, mCanvasHeight = height + 4);
+        setMeasuredDimension(width,  height);
         mRadius = (int) (Math.min(width - getPaddingLeft() - getPaddingRight(),
                 height - getPaddingTop() - getPaddingBottom()) * 1.0f / 2);
 
@@ -138,10 +137,10 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
         // 默认在画布左上角，这样做是为了更方便的绘制
 
         mCanvas.drawColor(Color.WHITE);
-        mCanvas.translate(mCanvasWidth * 1.0f / 2 - (getPaddingLeft() + getPaddingRight())/2, mCanvasHeight * 1.0f / 2 -( getPaddingTop() - getPaddingBottom())/2);
+        mCanvas.translate(getWidth() / 2 +(getPaddingLeft() - getPaddingRight())/2, getHeight() / 2 +(getPaddingTop() -getPaddingBottom())/2);
 // 2.绘制圆盘
-        mPaint.setStrokeWidth(2f); // 画笔设置2个像素的宽度
-        mCanvas.drawCircle(0, 0, mRadius, mPaint); // 到这一步就能知道第一步的好处了，否则害的去计算园的中心点坐标
+        mPaint.setStrokeWidth(5f); // 画笔设置2个像素的宽度
+        mCanvas.drawCircle(0, 0, mRadius-5f, mPaint); // 到这一步就能知道第一步的好处了，否则害的去计算园的中心点坐标
 // 3.绘制时刻度
         for (int i = 0; i < 12; i++) {
             mCanvas.drawLine(0, mRadius, 0, mRadius - mHourDegreeLength, mPaint);
