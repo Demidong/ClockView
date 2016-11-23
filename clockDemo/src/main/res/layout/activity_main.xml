@@ -12,9 +12,9 @@
         <!--android:paddingLeft="10dp"-->
          <!--/>-->
     <com.dx.demi.PieChatView
+        android:id="@+id/pie"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="80dp"
-        android:background="#dd1199"
         android:layout_centerInParent="true"/>
 </RelativeLayout>
