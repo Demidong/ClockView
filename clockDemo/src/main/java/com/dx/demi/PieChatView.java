@@ -69,14 +69,6 @@ public class PieChatView extends View {
         this.colors = colors;
     }
 
-    public Map getKindsMap() {
-        return kindsMap;
-    }
-
-    public void setKindsMap(Map kindsMap) {
-        this.kindsMap = kindsMap;
-    }
-
     public String getCenterTitle() {
         return centerTitle;
     }
@@ -188,7 +180,7 @@ public class PieChatView extends View {
 
                     mPaint.setColor(Color.WHITE);
                     mPaint.setAlpha(10);
-                    mCanvas.drawCircle(0, 0, mRadius / 2 + 20, mPaint);
+                    mCanvas.drawCircle(0, 0, mRadius / 2 + dp2px(10), mPaint);
                     mPaint.setAlpha(255);
                     mCanvas.drawCircle(0, 0, mRadius / 2, mPaint);
                     drawText(mCanvas, textAngle, kinds, needDrawAngle);
@@ -207,7 +199,7 @@ public class PieChatView extends View {
     //画中间文字标题
     private void drawCenterText(Canvas mCanvas, String text, float x, float y, Paint mPaint) {
         Rect rect = new Rect();
-        mTextPaint.setTextSize(dp2px(20));
+        mTextPaint.setTextSize(sp2px(20));
         mTextPaint.getTextBounds(text, 0, text.length(), rect);
         mCanvas.drawText(text, x, y+rect.height()/2, mTextPaint);
     }
@@ -215,7 +207,7 @@ public class PieChatView extends View {
     //画文字
     private void drawText(Canvas mCanvas, float textAngle, String kinds, float needDrawAngle) {
         Rect rect = new Rect();
-        mTextPaint.setTextSize(dp2px(15));
+        mTextPaint.setTextSize(sp2px(15));
         mTextPaint.getTextBounds(kinds, 0, kinds.length(), rect);
         if (textAngle >= 0 && textAngle <= 90) { //画布坐标系第一象限(数学坐标系第四象限)
             if (needDrawAngle < minAngle) { //如果小于某个度数,就把文字画在饼状图外面
