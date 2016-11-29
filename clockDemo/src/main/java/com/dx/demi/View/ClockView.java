@@ -1,4 +1,4 @@
-package com.dx.demi;
+package com.dx.demi.View;
 
 import android.content.Context;
 import android.graphics.Canvas;

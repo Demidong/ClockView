@@ -1,23 +1,28 @@
-package com.dx.demi;
+package com.dx.demi.activity;
 
+import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.dx.demi.View.PieChatView;
+import com.dx.demi.R;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by demi on 16/11/28.
+ */
 
+public class PieChatActivity extends Activity {
     private LinkedHashMap kindsMap = new LinkedHashMap<String, Integer>();
     private ArrayList<Integer> colors = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_piechat);
         PieChatView pieChatView = (PieChatView) findViewById(R.id.pie);
         kindsMap.put("苹果", 10);
         kindsMap.put("梨子", 30);
