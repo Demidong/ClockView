@@ -18,8 +18,8 @@ import static android.support.v7.widget.RecyclerView.*;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rcv ;
-    Class[] clazz = {PieChatActivity.class, ClockActivity.class};
-    String[] describle = {"水果大拼盘","时钟表盘"};
+    Class[] clazz = {PieChatActivity.class, ClockActivity.class,CoordinateActivity.class,EventActivity.class};
+    String[] describle = {"水果大拼盘","时钟表盘","坐标系","事件监听"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            System.out.println(describle.length);
             return clazz.length;
         }
         /**

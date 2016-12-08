@@ -185,6 +185,7 @@ public class PieChatView extends View {
                     mCanvas.drawCircle(0, 0, mRadius / 2, mPaint);
                     drawText(mCanvas, textAngle, kinds, needDrawAngle);
                     drawCenterText(mCanvas, centerTitle, 0, 0, mTextPaint);
+
                 }
 
               //  System.out.println("currentAngle: " + currentAngle + "needDrawAngle:" + needDrawAngle + "animatedValue:" + animatedValue);

@@ -12,6 +12,8 @@
         </activity>
         <activity android:name=".activity.PieChatActivity"/>
         <activity android:name=".activity.ClockActivity"/>
+        <activity android:name=".activity.CoordinateActivity"/>
+        <activity android:name=".activity.EventActivity"/>
     </application>
 
 </manifest>
