@@ -25,13 +25,13 @@ public class EventActivity extends Activity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        System.out.println("activty dispatchTouchEvent"+event.getAction());
+        System.out.println("activty dispatchTouchEvent..."+event.getAction());
         return super.dispatchTouchEvent(event);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        System.out.println("activty onTouchEvent"+event.getAction());
+        System.out.println("activty onTouchEvent..."+event.getAction());
         return super.onTouchEvent(event);
     }
 

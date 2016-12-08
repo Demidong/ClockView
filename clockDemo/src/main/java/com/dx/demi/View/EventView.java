@@ -36,7 +36,7 @@ public class EventView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        System.out.println("View onTouchEvent" + event.getAction());
+        System.out.println("View onTouchEvent..." + event.getAction());
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
@@ -55,12 +55,12 @@ public class EventView extends View {
                 invalidate();
                 break;
         }
-        return false;
+        return super.onTouchEvent(event);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        System.out.println("View dispatchTouchEvent" + event.getAction());
+        System.out.println("View dispatchTouchEvent..." + event.getAction());
         return super.dispatchTouchEvent(event);
     }
 
