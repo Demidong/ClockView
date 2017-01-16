@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">demi</string>
+
+    <string name="flash_time_to_start">距活动开始还剩</string>
+    <string name="flash_time_to_end">距下单结束还剩</string>
+    <string name="flash_time_to_reward">剩余奖励结算时间</string>
+    <string name="flash_time_to_tradeover">距交易结束还剩</string>
 </resources>

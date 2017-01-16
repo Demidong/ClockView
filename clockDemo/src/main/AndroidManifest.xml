@@ -14,6 +14,9 @@
         <activity android:name=".activity.ClockActivity"/>
         <activity android:name=".activity.CoordinateActivity"/>
         <activity android:name=".activity.EventActivity"/>
+        <activity android:name=".activity.ListActivity"/>
+        <activity android:name=".activity.NotifyCationActivity"/>
+        <activity android:name=".activity.ShopCarActivity"/>
     </application>
 
 </manifest>

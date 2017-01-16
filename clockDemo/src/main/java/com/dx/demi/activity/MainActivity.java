@@ -18,8 +18,8 @@ import static android.support.v7.widget.RecyclerView.*;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rcv ;
-    Class[] clazz = {PieChatActivity.class, ClockActivity.class,CoordinateActivity.class,EventActivity.class};
-    String[] describle = {"水果大拼盘","时钟表盘","坐标系","事件监听"};
+    Class[] clazz = {PieChatActivity.class, ClockActivity.class,CoordinateActivity.class,EventActivity.class,ListActivity.class,NotifyCationActivity.class,ShopCarActivity.class};
+    String[] describle = {"水果大拼盘","时钟表盘","坐标系","事件监听","多布局RecycleView列表","通知栏事件监听","购物车动画"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

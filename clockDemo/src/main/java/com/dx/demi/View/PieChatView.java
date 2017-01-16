@@ -29,7 +29,7 @@ import java.util.Set;
 public class PieChatView extends View {
     private static final int DEFAULT_MINANGLE = 30;
     private int sum = 0;
-    private int minAngle = DEFAULT_MINANGLE;
+    private int minAngle = DEFAULT_MINANGLE; //容纳文字最小角度
     /**
      * 存放事物的品种与其对应的数量
      */
@@ -77,11 +77,11 @@ public class PieChatView extends View {
         this.centerTitle = centerTitle;
     }
 
-    public float getAnimatedValue() {
+    private float getAnimatedValue() {
         return animatedValue;
     }
 
-    public void setAnimatedValue(float animatedValue) {
+    private void setAnimatedValue(float animatedValue) {
         this.animatedValue = animatedValue;
     }
 
