@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    　　
+    <string-array name="anims">
+        　　
+        <item>Alpha</item>
+        　　
+        <item>Scale</item>
+        　　
+        <item>Rotate</item>
+        　　
+        <item>Translate</item>
+
+        <item>mix</item>
+        　　
+    </string-array>
+    <string-array name="animotionkinds">
+        　　
+        <item>viewAnimotion</item>
+        　　
+        <item>propertyAnimorion</item>
+        　　
+    </string-array>
+    　　
+</resources>

@@ -1,6 +1,7 @@
 package com.dx.demi.activity;
 
 import android.content.Intent;
+import android.content.res.ObbInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +13,11 @@ import android.widget.TextView;
 
 import com.dx.demi.R;
 
+import java.sql.Array;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
 import static android.support.v7.widget.RecyclerView.*;
 
 
@@ -20,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rcv ;
     Class[] clazz = {PieChatActivity.class, ClockActivity.class,CoordinateActivity.class,EventActivity.class,
             ListActivity.class,NotifyCationActivity.class,ShopCarActivity.class,CameraActivity.class,
-            EToastActivity.class};
+            EToastActivity.class,TimeConutDownActivity.class,AnimationActivity.class};
     String[] describle = {"水果大拼盘","时钟表盘","坐标系","事件监听",
             "多布局RecycleView列表","通知栏事件监听","购物车动画","照相机",
-    "自定义Toast"};
+    "自定义Toast","倒计时","动画"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,4 +79,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
 }

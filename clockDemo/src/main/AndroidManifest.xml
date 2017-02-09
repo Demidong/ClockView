@@ -26,6 +26,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.ShopCarActivity"/>
         <activity android:name=".activity.EToastActivity"/>
+        <activity android:name=".activity.TimeConutDownActivity"/>
+        <activity android:name=".activity.AnimationActivity"/>
     </application>
 
 </manifest>
