@@ -27,7 +27,10 @@
         <activity android:name=".activity.ShopCarActivity"/>
         <activity android:name=".activity.EToastActivity"/>
         <activity android:name=".activity.TimeConutDownActivity"/>
-        <activity android:name=".activity.AnimationActivity"/>
+        <activity android:name=".activity.AnimationActivity"
+            android:exported="true"/>
+        <activity android:name=".activity.ViewPagerActivity"
+            />
     </application>
 
 </manifest>
