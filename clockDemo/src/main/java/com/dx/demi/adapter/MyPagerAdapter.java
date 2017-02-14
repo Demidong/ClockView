@@ -43,6 +43,7 @@ public class MyPagerAdapter extends PagerAdapter {
         BitmapFactory.Options opts =new BitmapFactory.Options();
         opts.inSampleSize =2;
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), a[position],opts);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         imageView.setImageBitmap(bitmap);
         container.addView(imageView);
         return imageView;

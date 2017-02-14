@@ -25,18 +25,18 @@ public class EventLinearLayout extends LinearLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         System.out.println("LinearLayout onInterceptTouchEvent..." + event.getAction());
-        return true;
+        return super.onInterceptTouchEvent(event);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         System.out.println("LinearLayout dispatchTouchEvent..." + event.getAction());
-        return true;
+        return super.dispatchTouchEvent(event);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         System.out.println("LinearLayout onTouchEvent..." + event.getAction());
-        return true;
+        return super.onTouchEvent(event);
     }
 }
