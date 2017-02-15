@@ -3,6 +3,7 @@ package com.dx.demi.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 
 import com.dx.demi.R;
@@ -13,7 +14,6 @@ import com.dx.demi.View.EventView;
  */
 
 public class EventActivity extends Activity {
-    private float x =0,y =0 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,21 @@ public class EventActivity extends Activity {
         TextView tv = (TextView) findViewById(R.id.tv);
         EventView eventView = (EventView) findViewById(R.id.event);
         eventView.setTextView(tv);
+        eventView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("eventView onClick...");
+            }
+
+            });
+        eventView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                System.out.println("eventView onTouch..."+event.getAction());
+                return false;
+            }
+        });
+
     }
 
     @Override

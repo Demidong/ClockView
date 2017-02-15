@@ -1,6 +1,7 @@
 package com.dx.demi.utils;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.TypedValue;
 
 /**
@@ -28,6 +29,18 @@ public class DensityUtils
 	{
 		return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
 				dpVal, context.getResources().getDisplayMetrics());
+	}
+	/**
+	 * dp转px
+	 *
+	 * @param context
+	 * @param val
+	 * @return
+	 */
+	public static int dp2px(Resources res, float dpVal)
+	{
+		return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+				dpVal, res.getDisplayMetrics());
 	}
 
 	/**

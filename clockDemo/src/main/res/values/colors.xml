@@ -49,4 +49,10 @@
     <color name="login_tab_text_default">#696d78</color>
     <color name="login_tab_text_checked">#fcfcfc</color>
 
+    <color name="holo_blue">#FF33E5B5</color>
+    <color name="num_blue">#419DE4</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+
 </resources>

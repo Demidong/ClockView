@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.dx.demi.R;
+import com.dx.demi.View.JazzyViewPager;
+import com.dx.demi.utils.OutlineContainer;
 
 import java.util.ArrayList;
 
@@ -20,11 +22,11 @@ public class MyPagerAdapter extends PagerAdapter {
     private ArrayList<View> pageList;
     private Context context;
     int a[] = {R.mipmap.comeon, R.mipmap.nice, R.mipmap.single, R.mipmap.ok, R.mipmap.sky};
-
-    public MyPagerAdapter(ArrayList<View> pageList, Context context) {
+    private JazzyViewPager jazzyViewPager ;
+    public MyPagerAdapter(ArrayList<View> pageList, Context context,JazzyViewPager jazzyViewPager) {
         this.pageList = pageList;
         this.context = context;
-
+        this.jazzyViewPager = jazzyViewPager;
     }
 
     @Override
@@ -34,7 +36,13 @@ public class MyPagerAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == object;
+        if (view instanceof OutlineContainer)
+        {
+            return ((OutlineContainer) view).getChildAt(0) == object;
+        } else
+        {
+            return view == object;
+        }
     }
 
     @Override
@@ -45,12 +53,14 @@ public class MyPagerAdapter extends PagerAdapter {
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), a[position],opts);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         imageView.setImageBitmap(bitmap);
-        container.addView(imageView);
+        container.addView(imageView,android.app.ActionBar.LayoutParams.MATCH_PARENT,
+                android.app.ActionBar.LayoutParams.MATCH_PARENT);
+        jazzyViewPager.setObjectForPosition(imageView, position);
         return imageView;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView(pageList.get(position));
+        container.removeView(jazzyViewPager.findViewFromObject(position));
     }
 }

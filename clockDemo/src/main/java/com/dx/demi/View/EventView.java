@@ -82,4 +82,5 @@ public class EventView extends View {
         this.textView = textView;
     }
 
+
 }

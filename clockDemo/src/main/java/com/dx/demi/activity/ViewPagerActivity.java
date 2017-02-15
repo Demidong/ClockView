@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.dx.demi.R;
+import com.dx.demi.View.JazzyViewPager;
 import com.dx.demi.adapter.MyAdapter;
 import com.dx.demi.adapter.MyPagerAdapter;
 import com.dx.demi.View.MyViewPager;
@@ -20,19 +21,25 @@ import java.util.ArrayList;
  */
 
 public class ViewPagerActivity extends Activity {
-    private ListView pagerlist ;
+    private ListView mList ;
     private MyAdapter myAdapter;
     private ArrayList<String> list ;
-    private MyViewPager viewpager ;
+    private JazzyViewPager viewpager ;
     private MyPagerAdapter myPagerAdapter;
     private ArrayList<View> pagerList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewpager);
+        init();
+        setPagerroperties();
+        setListProperties();
+
+    }
+    private void init(){
+        mList = (ListView) findViewById(R.id.mList);
         View header =  getLayoutInflater().inflate(R.layout.header_viewpager,null);
-        viewpager= (MyViewPager) header.findViewById(R.id.pager);
-        pagerlist = (ListView) findViewById(R.id.pagerlist);
+        viewpager= (JazzyViewPager) header.findViewById(R.id.pager);
         list = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             list.add(""+i);
@@ -42,12 +49,19 @@ public class ViewPagerActivity extends Activity {
             ImageView image = new ImageView(this);
             pagerList.add(image);
         }
-        myPagerAdapter = new MyPagerAdapter(pagerList,this);
-        viewpager.setAdapter(myPagerAdapter);
-        pagerlist.addHeaderView(header);
+        myPagerAdapter = new MyPagerAdapter(pagerList,this,viewpager);
         myAdapter = new MyAdapter(list,this);
-        pagerlist.setAdapter(myAdapter);
-        pagerlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mList.addHeaderView(header);
+    }
+    public void setPagerroperties(){
+        viewpager.setAdapter(myPagerAdapter);
+        viewpager.setTransitionEffect(JazzyViewPager.TransitionEffect.CubeOut);
+
+    }
+    public void setListProperties(){
+
+        mList.setAdapter(myAdapter);
+        mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 T.showLong(ViewPagerActivity.this,list.get(position));
