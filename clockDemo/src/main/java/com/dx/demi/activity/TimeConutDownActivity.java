@@ -1,23 +1,11 @@
 package com.dx.demi.activity;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.AppOpsManager;
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.dx.demi.R;
-import com.dx.demi.View.EToast;
-import com.dx.demi.View.TimeCountDownView;
+import com.dx.demi.view.TimeCountDownView;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

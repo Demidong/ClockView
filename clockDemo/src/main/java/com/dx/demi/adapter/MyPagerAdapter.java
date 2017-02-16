@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.dx.demi.R;
-import com.dx.demi.View.JazzyViewPager;
+import com.dx.demi.view.JazzyViewPager;
 import com.dx.demi.utils.OutlineContainer;
 
 import java.util.ArrayList;

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.dx.demi.R;
-import com.dx.demi.View.CameraSurfaceView;
+import com.dx.demi.view.CameraSurfaceView;
 
 public class CameraActivity extends Activity {
     private CameraSurfaceView cameraview;

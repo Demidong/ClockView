@@ -1,21 +1,14 @@
-package com.dx.demi.View;
+package com.dx.demi.view;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-import android.graphics.Region;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.view.PixelCopy;
 import android.view.View;
-
-import com.dx.demi.R;
 
 /**
  * Created by demi on 16/11/29.

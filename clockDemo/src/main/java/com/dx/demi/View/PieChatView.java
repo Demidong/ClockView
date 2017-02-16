@@ -1,4 +1,4 @@
-package com.dx.demi.View;
+package com.dx.demi.view;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -10,7 +10,6 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 

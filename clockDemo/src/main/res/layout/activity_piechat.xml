@@ -5,7 +5,7 @@
     tools:context="com.dx.demi.activity.MainActivity">
 
 
-    <com.dx.demi.View.PieChatView
+    <com.dx.demi.view.PieChatView
         android:id="@+id/pie"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

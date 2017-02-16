@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.dx.demi.R;
-import com.dx.demi.View.EToast;
+import com.dx.demi.view.EToast;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

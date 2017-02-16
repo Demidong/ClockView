@@ -1,7 +1,6 @@
 package com.dx.demi.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dx.demi.R;
-import com.dx.demi.View.PieChatView;
+import com.dx.demi.view.PieChatView;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

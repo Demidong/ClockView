@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import com.dx.demi.View.PieChatView;
+import com.dx.demi.view.PieChatView;
 import com.dx.demi.R;
 
 import java.util.ArrayList;

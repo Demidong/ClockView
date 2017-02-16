@@ -1,4 +1,4 @@
-package com.dx.demi.View;
+package com.dx.demi.view;
 
 import android.content.Context;
 import android.content.res.Configuration;

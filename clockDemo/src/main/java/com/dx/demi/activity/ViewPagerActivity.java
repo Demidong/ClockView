@@ -8,10 +8,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.dx.demi.R;
-import com.dx.demi.View.JazzyViewPager;
+import com.dx.demi.view.JazzyViewPager;
 import com.dx.demi.adapter.MyAdapter;
 import com.dx.demi.adapter.MyPagerAdapter;
-import com.dx.demi.View.MyViewPager;
 import com.dx.demi.utils.T;
 
 import java.util.ArrayList;
@@ -55,7 +54,7 @@ public class ViewPagerActivity extends Activity {
     }
     public void setPagerroperties(){
         viewpager.setAdapter(myPagerAdapter);
-        viewpager.setTransitionEffect(JazzyViewPager.TransitionEffect.CubeOut);
+        viewpager.setTransitionEffect(JazzyViewPager.TransitionEffect.Standard);
 
     }
     public void setListProperties(){

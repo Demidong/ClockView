@@ -1,4 +1,4 @@
-package com.dx.demi.View;
+package com.dx.demi.view;
 
 import android.support.v7.widget.RecyclerView;
 

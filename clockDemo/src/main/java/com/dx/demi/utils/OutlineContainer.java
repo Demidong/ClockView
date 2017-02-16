@@ -12,7 +12,7 @@ import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 
 import com.dx.demi.R;
-import com.dx.demi.View.JazzyViewPager;
+import com.dx.demi.view.JazzyViewPager;
 
 public class OutlineContainer extends FrameLayout implements Animatable
 {

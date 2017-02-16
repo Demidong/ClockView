@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.dx.demi.View.CoordinateView
+    <com.dx.demi.view.CoordinateView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

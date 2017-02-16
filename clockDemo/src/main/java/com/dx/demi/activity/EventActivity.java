@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.dx.demi.R;
-import com.dx.demi.View.EventView;
+import com.dx.demi.view.EventView;
 
 /**
  * Created by demi on 16/12/6.
