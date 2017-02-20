@@ -26,10 +26,11 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rcv ;
     Class[] clazz = {PieChatActivity.class, ClockActivity.class,CoordinateActivity.class,EventActivity.class,
             ListActivity.class,NotifyCationActivity.class,ShopCarActivity.class,CameraActivity.class,
-            EToastActivity.class,TimeConutDownActivity.class,AnimationActivity.class,ViewPagerActivity.class};
+            EToastActivity.class,TimeConutDownActivity.class,AnimationActivity.class,ViewPagerActivity.class,
+            DownloadActivity.class};
     String[] describle = {"水果大拼盘","时钟表盘","坐标系","事件监听",
             "多布局RecycleView列表","通知栏事件监听","购物车动画","照相机",
-    "自定义Toast","倒计时","动画","ViewPager"};
+    "自定义Toast","倒计时","动画","ViewPager","下载apk"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
