@@ -32,6 +32,7 @@
             android:exported="true"/>
         <activity android:name=".activity.ViewPagerActivity" />
         <activity android:name=".activity.DownloadActivity" />
+        <activity android:name=".activity.RetrofitOKHttpActivity" />
     </application>
 
 </manifest>

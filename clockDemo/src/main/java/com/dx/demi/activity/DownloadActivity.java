@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.dx.demi.R;
 
-import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -98,7 +97,7 @@ public class DownloadActivity extends Activity implements View.OnClickListener {
                 cursor.close();
             }
         };
-        timer.schedule(task, 0,1000);
+        timer.schedule(task, 0,1000*3);
     }
 
     @Override
@@ -115,4 +114,5 @@ public class DownloadActivity extends Activity implements View.OnClickListener {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);//4.0以上系统弹出安装成功打开界面
         startActivity(intent);
     }
+
 }
