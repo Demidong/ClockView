@@ -34,7 +34,17 @@ captures/
 
 # Intellij
 *.iml
-.idea/workspace.xml
+.idea/
 
 # Keystore files
 *.jks
+# Gradle
+build
+/reports
+/.gradle
+/buildSrc/.gradle/
+/captures
+/PythonTool/output_.DS_Store
+# OS X
+.DS_Store
+
