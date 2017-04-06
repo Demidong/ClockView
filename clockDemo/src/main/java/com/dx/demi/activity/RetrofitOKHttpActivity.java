@@ -11,6 +11,7 @@ import com.dx.demi.R;
 import com.dx.demi.UrlService;
 import com.dx.demi.factory.BitmapConverterFactory;
 import com.dx.demi.utils.Platform;
+import com.dx.demi.view.NineSquareView;
 
 
 import okhttp3.OkHttpClient;
@@ -25,15 +26,18 @@ public class RetrofitOKHttpActivity extends Activity implements View.OnClickList
     ImageView image;
     Button button;
     private Platform mPlatform;
+    NineSquareView nineSquareView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitiy_retrofit);
-        image = (ImageView) findViewById(R.id.image);
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(this);
+//        image = (ImageView) findViewById(R.id.image);
+//        button = (Button) findViewById(R.id.button);
+        nineSquareView = (NineSquareView) findViewById(R.id.nsv);
+//        button.setOnClickListener(this);
         mPlatform = Platform.get();
+
     }
 
     @Override

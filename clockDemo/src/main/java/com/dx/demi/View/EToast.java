@@ -1,6 +1,7 @@
 package com.dx.demi.view;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Handler;
@@ -36,7 +37,7 @@ public class EToast {
         mContext = context;
         container = (ViewGroup) ((Activity) context)
                 .findViewById(android.R.id.content);
-        v = ((Activity) context).getLayoutInflater().inflate(
+        v = ( (Activity)context).getLayoutInflater().inflate(
                 R.layout.etoast, container);
         mContainer = (LinearLayout) v.findViewById(R.id.mbContainer);
         mContainer.setVisibility(View.GONE);

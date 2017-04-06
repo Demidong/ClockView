@@ -9,8 +9,8 @@ android {
             storePassword 'dong0515'
         }
     }
-    compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
     defaultConfig {
         applicationId "com.dx.demi"
         minSdkVersion 15
@@ -41,8 +41,8 @@ dependencies {
     })
     //圆形状图片
     compile 'de.hdodenhof:circleimageview:2.0.0'
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:recyclerview-v7:23.2.1'
     testCompile 'junit:junit:4.12'
     compile files('libs/nineoldandroids-2.4.0.jar')
     compile 'com.squareup.okhttp3:okhttp:3.3.1'
