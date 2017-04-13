@@ -2,6 +2,7 @@ package com.dx.demi.activity;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,12 +12,11 @@ import com.dx.demi.R;
 import com.dx.demi.UrlService;
 import com.dx.demi.factory.BitmapConverterFactory;
 import com.dx.demi.utils.Platform;
-import com.dx.demi.view.NineSquareView;
-
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;
+
 
 /**
  * Created by demi on 2017/3/13.
@@ -26,16 +26,14 @@ public class RetrofitOKHttpActivity extends Activity implements View.OnClickList
     ImageView image;
     Button button;
     private Platform mPlatform;
-    NineSquareView nineSquareView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitiy_retrofit);
-//        image = (ImageView) findViewById(R.id.image);
-//        button = (Button) findViewById(R.id.button);
-        nineSquareView = (NineSquareView) findViewById(R.id.nsv);
-//        button.setOnClickListener(this);
+        image = (ImageView) findViewById(R.id.image);
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(this);
         mPlatform = Platform.get();
 
     }

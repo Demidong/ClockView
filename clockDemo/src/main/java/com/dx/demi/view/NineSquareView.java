@@ -1,35 +1,36 @@
 package com.dx.demi.view;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.ArraySet;
+import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.GridView;
 
-import com.dx.demi.R;
-import com.dx.demi.bean.Line;
+import com.dx.demi.bean.Point;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 /**
  * Created by demi on 2017/3/14.
  */
 
-public class NineSquareView extends GridView {
-    private Paint mPaint;
-    private static int SQUAREWIDRH = 120; //默认正方形的边长
+public class NineSquareView extends View {
+    private Paint pointPaint;
+    private Paint linePaint;
+    private Path path;
+    private static int SQUAREWIDRH = 400; //默认正方形的边长
     private float mSquarewidth = SQUAREWIDRH; //每个正方形的边长
     private float x, y, startX, startY;
-    private Bitmap bitmap;
-    private LinkedHashSet<Line> lines = new LinkedHashSet<Line>();
+    private LinkedHashMap<String,Point> points = new LinkedHashMap<>();
+    private OnFinishGestureListener finishGestureListener ;
 
     public NineSquareView(Context context) {
         this(context, null);
@@ -41,13 +42,19 @@ public class NineSquareView extends GridView {
 
     public NineSquareView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mPaint = new Paint();
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setColor(Color.CYAN);
-        mPaint.setStrokeWidth(10);
-        mPaint.setAntiAlias(true);
-        mPaint.setStrokeCap(Paint.Cap.ROUND);
-        bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.point);
+        linePaint = new Paint();
+        linePaint.setStyle(Paint.Style.STROKE);
+        linePaint.setColor(Color.CYAN);
+        linePaint.setStrokeWidth(5);
+        linePaint.setAntiAlias(true);
+        linePaint.setStrokeCap(Paint.Cap.ROUND);
+        pointPaint = new Paint();
+        pointPaint.setStyle(Paint.Style.FILL);
+        pointPaint.setColor(Color.parseColor("#cbd0de"));
+        pointPaint.setStrokeWidth(40);
+        pointPaint.setAntiAlias(true);
+        pointPaint.setStrokeCap(Paint.Cap.ROUND);
+        path =new Path();
     }
 
     @Override
@@ -57,38 +64,60 @@ public class NineSquareView extends GridView {
         float b = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                canvas.drawBitmap(bitmap, mSquarewidth * (0.5f + i) - bitmap.getWidth() / 2, mSquarewidth * (0.5f + j) - bitmap.getWidth() / 2, mPaint);
+                pointPaint.setColor(Color.parseColor("#cbd0de"));
+                canvas.drawPoint(mSquarewidth * (0.5f + i),mSquarewidth * (0.5f + j),pointPaint);
             }
         }
-        Iterator<Line> iterator = lines.iterator();
-        while (iterator.hasNext()) {
-            Line line = iterator.next();
-            canvas.drawLine(line.getStartX(), line.getStartY(), line.getEndX(), line.getEndY(), mPaint);
+
+        Collection<Point> collection = points.values();
+        Iterator<Point> iterator = collection.iterator();
+        if(iterator.hasNext()){
+            Point point = iterator.next();
+            drawCyanPoint(canvas,point);
+            System.out.println("moveTo:"+point.getX()+"===="+point.getY());
+            path.moveTo(point.getX(),point.getY());
         }
-//        for (int k = 0; k < lines.size(); k++) {
-//            canvas.drawLine(lines.get(k).getStartX(),lines.get(k).getStartY(),lines.get(k).getEndX(),lines.get(k).getEndY(),mPaint);
-//        }
-        //找到每一次的起点
+        while (iterator.hasNext()) {
+            Point point = iterator.next();
+            drawCyanPoint(canvas,point);
+            System.out.println("lineTo:"+point.getX()+"===="+point.getY());
+            path.lineTo(point.getX(),point.getY());
+        }
+        canvas.drawPath(path,linePaint);
+        path.reset();
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (Math.abs(startX - mSquarewidth * (0.5f + i)) < bitmap.getWidth() / 2 &&
-                        Math.abs(startY - mSquarewidth * (0.5f + j)) < bitmap.getWidth() / 2) {
-                    canvas.drawLine(mSquarewidth * (0.5f + i), mSquarewidth * (0.5f + j), x, y, mPaint);
+                if (Math.abs(startX - mSquarewidth * (0.5f + i)) < mSquarewidth * 0.3f &&
+                        Math.abs(startY - mSquarewidth * (0.5f + j)) < mSquarewidth * 0.3f) {
+                    path.moveTo(mSquarewidth * (0.5f + i), mSquarewidth * (0.5f + j));
+                    path.lineTo(x, y);
+                    canvas.drawPath(path,linePaint);
+                    path.reset();
                     a = mSquarewidth * (0.5f + i);
                     b = mSquarewidth * (0.5f + j);
+                    Point point =new Point(a,b);
+                    points.put(i+":"+j,point);
+                    System.out.println(points.size());
+                    System.out.println(i+"//"+j);
                 }
             }
         }
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (Math.abs(x - mSquarewidth * (0.5f + i)) < bitmap.getWidth() / 2 &&
-                        Math.abs(y - mSquarewidth * (0.5f + j)) < bitmap.getWidth() / 2
+                if (Math.abs(x - mSquarewidth * (0.5f + i)) < mSquarewidth * 0.3f &&
+                        Math.abs(y - mSquarewidth * (0.5f + j)) <mSquarewidth * 0.3f
                         ) {
+                    Iterator<Point> iterator2 = collection.iterator();
+                    while(iterator2.hasNext()){
+                        Point point = iterator2.next();
+                       if(mSquarewidth * (0.5f + i)==point.getX() && mSquarewidth * (0.5f + j)==point.getY()){
+                              return;
+                       }
+                    }
                     startX = mSquarewidth * (0.5f + i);
                     startY = mSquarewidth * (0.5f + j);
-                    Line line = new Line(a, b, mSquarewidth * (0.5f + i), mSquarewidth * (0.5f + j));
-                    lines.add(line);
-                    System.out.println(lines.size());
+
                 }
             }
         }
@@ -110,7 +139,6 @@ public class NineSquareView extends GridView {
             if (wideMode == MeasureSpec.AT_MOST) {
                 width = Math.min(width, wideSize);
             }
-
         }
 
         if (heightMode == MeasureSpec.EXACTLY) { //精确值 或matchParent
@@ -146,10 +174,43 @@ public class NineSquareView extends GridView {
                 y = 0;
                 startX = 0;
                 startY = 0;
-                lines.clear();
+                finishGestureListener.onfinish(points);
+                points.clear();
                 invalidate();
                 break;
         }
-        return super.onTouchEvent(ev);
+        return true;
+    }
+    public interface OnFinishGestureListener {
+       void onfinish(LinkedHashMap<String,Point> points);
+
+    }
+
+    //绘制手指划到的那个点,点外加上一层圈。
+    public void drawCyanPoint(Canvas canvas, Point point){
+        String s =getKey(point);
+        String [] strings =  s.split(":");
+        int i= Integer.parseInt(strings[0]);
+        int j=Integer.parseInt(strings[1]);
+        pointPaint.setColor(Color.CYAN);
+        canvas.drawPoint(mSquarewidth * (0.5f + i),mSquarewidth * (0.5f + j),pointPaint);
+        canvas.drawCircle(mSquarewidth * (0.5f + i),mSquarewidth * (0.5f + j),mSquarewidth * 0.3f,linePaint);
+    }
+
+    //根据value取key值
+    public  String getKey(Point value)//根据字符得到对应的编码
+    {
+        String key = "";
+        Set<Map.Entry<String, Point>> set = points.entrySet();
+        for(Map.Entry<String, Point> entry : set){
+            if(entry.getValue().equals(value)){
+                key = entry.getKey();
+                break;
+            }
+        }
+        return key;
+    }
+    public void setOnFinishGestureListener(OnFinishGestureListener finishGestureListener){
+        this.finishGestureListener =finishGestureListener ;
     }
 }

@@ -1,10 +1,12 @@
 package com.dx.demi.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by demi on 2017/4/6.
  */
 
-public class Point {
+public class Point  implements Serializable{
     private float x ;
     private float y ;
 
