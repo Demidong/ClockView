@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circle="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <com.dx.demi.view.OvalProgrossView
+        android:id="@+id/oval"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        circle:fixText="7日盈利指数"
+        circle:fixTextColor="@color/hint"
+        circle:fixTextSize="12sp"
+        circle:ovalColor="@color/red"
+        circle:ovalWidth="2dp"
+        circle:progressTextColor="@color/red"
+        circle:progressTextSize="32sp" />
+</LinearLayout>

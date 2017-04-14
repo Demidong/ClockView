@@ -19,4 +19,15 @@
         <attr name="outlineEnabled" format="boolean" />
         <attr name="outlineColor" format="color|reference" />
     </declare-styleable>
+
+    <declare-styleable name="OvalProgressView">
+        <attr name="ovalColor" format="color" />
+        <attr name="fixTextColor" format="color" />
+        <attr name="progressTextColor" format="color" />
+        <attr name="ovalWidth" format="dimension" />
+        <attr name="progressText" format="string" />
+        <attr name="progressTextSize" format="dimension" />
+        <attr name="fixText" format="string" />
+        <attr name="fixTextSize" format="dimension" />
+    </declare-styleable>
 </resources>

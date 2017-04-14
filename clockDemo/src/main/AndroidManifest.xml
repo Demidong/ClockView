@@ -28,6 +28,7 @@
         <activity android:name=".activity.ViewPagerActivity" />
         <activity android:name=".activity.DownloadActivity" />
         <activity android:name=".activity.RetrofitOKHttpActivity" />
+        <activity android:name=".activity.PercentActivity" />
         <activity android:name=".activity.PswActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
