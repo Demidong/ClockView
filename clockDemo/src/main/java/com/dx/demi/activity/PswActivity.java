@@ -84,9 +84,11 @@ public class PswActivity extends Activity {
                 } else {//第二次设置
                     if (isEquals(pswpoints,points)) {
                         SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString(PREFERENCENAME, SceneList2String(points)).commit();
+                        editor.putString(PREFERENCENAME, map2String(points)).commit();
                         notice.setTextColor(Color.BLUE);
                         notice.setText("设置成功");
+                        startActivity(new Intent(PswActivity.this, MainActivity.class));
+                        finish();
                         isSetPsw = true;
                     } else {
                         notice.setTextColor(Color.RED);
@@ -124,6 +126,7 @@ public class PswActivity extends Activity {
         head.setVisibility(isSetPsw?View.VISIBLE:View.GONE);
         ninePointView.setVisibility(isSetPsw?View.GONE:View.VISIBLE);
         notice.setText(isSetPsw? "":"为了您的账户安全,请设置手势密码");
+        reset.setVisibility(isSetPsw?View.GONE:View.VISIBLE);
     }
 
     public boolean isEquals(LinkedHashMap<String, Point> pointsOne,LinkedHashMap<String, Point> pointsTwo) {
@@ -142,24 +145,7 @@ public class PswActivity extends Activity {
         return true;
     }
 
-//    public boolean isEqualss(LinkedHashMap<String, Point> points) {
-//        Iterator<String> iterator = pswpoints.keySet().iterator();
-//        Iterator<String> iterator2 = points.keySet().iterator();
-//        if (points.size() != pswpoints.size()) {
-//            return false;
-//        }
-//        while (iterator.hasNext()) {
-//            String s = iterator.next();
-//            String s2 = iterator2.next();
-//            if (!s.equals(s2)) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-
-
-    public  String SceneList2String(LinkedHashMap<String, Point> hashmap) {
+    public  String map2String(LinkedHashMap<String, Point> hashmap) {
         // 实例化一个ByteArrayOutputStream对象，用来装载压缩后的字节文件。
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         String sceneListString = null;
@@ -184,7 +170,7 @@ public class PswActivity extends Activity {
     public LinkedHashMap<String, Point> getHashMap() {
         String liststr = preferences.getString(PREFERENCENAME, null);
         try {
-            return String2SceneList(liststr);
+            return string2Map(liststr);
         } catch (StreamCorruptedException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -195,7 +181,7 @@ public class PswActivity extends Activity {
         return null;
     }
     //@SuppressWarnings("unchecked")
-    public  LinkedHashMap<String, Point> String2SceneList(
+    public  LinkedHashMap<String, Point> string2Map(
             String SceneListString) throws
             IOException, ClassNotFoundException {
         byte[] mobileBytes = Base64.decode(SceneListString.getBytes(),

@@ -23,14 +23,15 @@ import java.util.Set;
  */
 
 public class NineSquareView extends View {
-    private Paint pointPaint;
-    private Paint linePaint;
-    private Path path;
-    private static int SQUAREWIDRH = 400; //默认正方形的边长
-    private float mSquarewidth = SQUAREWIDRH; //每个正方形的边长
-    private float x, y, startX, startY;
-    private LinkedHashMap<String,Point> points = new LinkedHashMap<>();
-    private OnFinishGestureListener finishGestureListener ;
+    private Paint pointPaint;  //画点的画笔
+    private Paint linePaint; // 画线的画笔
+    private Path path;     //路径
+    private static int SQUAREWIDRH = 300; //默认正方形的边长
+    private float mSquarewidth = SQUAREWIDRH; //每个正方形的边长 9个
+    private float x, y; //手指在滑动的时候那个点的坐标
+    private float  startX, startY; //手指首次接触View的那个点的坐标
+    private LinkedHashMap<String,Point> points = new LinkedHashMap<>(); //存放手指连接的点
+    private OnFinishGestureListener finishGestureListener ; //当手指抬起时,触发的监听
 
     public NineSquareView(Context context) {
         this(context, null);
@@ -60,8 +61,6 @@ public class NineSquareView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        float a = 0;
-        float b = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 pointPaint.setColor(Color.parseColor("#cbd0de"));
@@ -94,12 +93,11 @@ public class NineSquareView extends View {
                     path.lineTo(x, y);
                     canvas.drawPath(path,linePaint);
                     path.reset();
-                    a = mSquarewidth * (0.5f + i);
-                    b = mSquarewidth * (0.5f + j);
-                    Point point =new Point(a,b);
+                    Point point =new Point(mSquarewidth * (0.5f + i),mSquarewidth * (0.5f + j));
                     points.put(i+":"+j,point);
                     System.out.println(points.size());
                     System.out.println(i+"//"+j);
+
                 }
             }
         }

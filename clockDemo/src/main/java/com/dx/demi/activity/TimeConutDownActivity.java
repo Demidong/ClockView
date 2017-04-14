@@ -21,7 +21,7 @@ public class TimeConutDownActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_countdown);
         countdown = (TimeCountDownView) findViewById(R.id.countdown);
-        countdown.setDeadTime(str2Time("2017-02-09 12:00:00"));
+        countdown.setDeadTime(str2Time("2020-02-09 12:00:00"));
     }
     public static long str2Time(String str){
         Calendar c = Calendar.getInstance();
