@@ -13,7 +13,7 @@ android {
     buildToolsVersion "23.0.0"
     defaultConfig {
         applicationId "com.dx.demi"
-        minSdkVersion 19
+        minSdkVersion 15
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -55,5 +55,5 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'com.github.Blincheng:Toast:v1.1'
+    compile 'com.github.Blincheng:Toast:v1.2'
 }
