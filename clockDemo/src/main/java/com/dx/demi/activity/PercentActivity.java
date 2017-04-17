@@ -15,7 +15,7 @@ public class PercentActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_percent);
-      OvalProgrossView oval= (OvalProgrossView) findViewById(R.id.oval);
+        OvalProgrossView oval= (OvalProgrossView) findViewById(R.id.oval);
         oval.setmOvalProgress(88);
 
     }

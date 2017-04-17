@@ -13,7 +13,7 @@ android {
     buildToolsVersion "23.0.0"
     defaultConfig {
         applicationId "com.dx.demi"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -31,6 +31,9 @@ android {
         }
     }
     productFlavors {
+    }
+    repositories {
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -52,4 +55,5 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.github.Blincheng:Toast:v1.1'
 }
