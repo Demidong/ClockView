@@ -278,6 +278,7 @@ public class OvalProgrossView extends View {
                 dpVal, getResources().getDisplayMetrics());
     }
 
+
     /**
      * sp 2 px
      *

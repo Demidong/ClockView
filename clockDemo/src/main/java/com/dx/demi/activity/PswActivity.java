@@ -89,7 +89,6 @@ public class PswActivity extends Activity {
                         editor.putString(PREFERENCENAME, map2String(points)).commit();
                         notice.setTextColor(Color.BLUE);
                         notice.setText("设置成功");
-                        Toast.makeText(PswActivity.this,"与首次绘制不一致,请再次绘制",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(PswActivity.this, MainActivity.class));
                         finish();
                         isSetPsw = true;
