@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.dx.demi">
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name=".DemiApplication">
+
+        <activity android:name=".activity.MainActivity">
+        </activity>
+        <activity android:name=".activity.PieChatActivity"/>
+        <activity android:name=".activity.ClockActivity"/>
+        <activity android:name=".activity.CoordinateActivity"/>
+        <activity android:name=".activity.EventActivity"/>
+        <activity android:name=".activity.ListActivity"/>
+        <activity android:name=".activity.NotifyCationActivity"/>
+        <activity
+            android:name=".activity.CameraActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ShopCarActivity"/>
+        <activity android:name=".activity.EToastActivity"/>
+        <activity android:name=".activity.TimeConutDownActivity"/>
+        <activity
+            android:name=".activity.AnimationActivity"
+            android:exported="true"/>
+        <activity android:name=".activity.ViewPagerActivity"/>
+        <activity android:name=".activity.DownloadActivity"/>
+        <activity android:name=".activity.RetrofitOKHttpActivity"/>
+        <activity android:name=".activity.PercentActivity"/>
+        <activity android:name=".activity.TinkerActivity"/>
+        <activity android:name=".activity.PswActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
