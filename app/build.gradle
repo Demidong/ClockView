@@ -13,7 +13,7 @@ android {
 
     def javaVersion = JavaVersion.VERSION_1_7
     compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    buildToolsVersion '25.0.0'
     compileOptions {
         sourceCompatibility javaVersion
         targetCompatibility javaVersion
