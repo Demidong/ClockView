@@ -55,7 +55,7 @@ public class EventView extends View {
                 invalidate();
                 break;
         }
-        return super.onTouchEvent(event);
+        return true;
     }
 
     @Override

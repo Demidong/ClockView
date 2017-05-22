@@ -25,7 +25,7 @@ public class EventLinearLayout extends LinearLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         System.out.println("LinearLayout onInterceptTouchEvent..." + event.getAction());
-        return super.onInterceptTouchEvent(event);
+        return true;
     }
 
     @Override

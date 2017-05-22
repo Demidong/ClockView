@@ -21,20 +21,20 @@ public class EventActivity extends Activity {
         TextView tv = (TextView) findViewById(R.id.tv);
         EventView eventView = (EventView) findViewById(R.id.event);
         eventView.setTextView(tv);
-        eventView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("eventView onClick...");
-            }
-
-            });
-        eventView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                System.out.println("eventView onTouch..."+event.getAction());
-                return false;
-            }
-        });
+//        eventView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                System.out.println("eventView onClick...");
+//            }
+//
+//            });
+//        eventView.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                System.out.println("eventView onTouch..."+event.getAction());
+//                return true;
+//            }
+//        });
 
     }
 

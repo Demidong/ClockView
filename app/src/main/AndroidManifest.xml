@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".DemiApplication">
+        >
 
         <activity android:name=".activity.MainActivity">
         </activity>
@@ -40,7 +40,7 @@
         <activity android:name=".activity.DownloadActivity"/>
         <activity android:name=".activity.RetrofitOKHttpActivity"/>
         <activity android:name=".activity.PercentActivity"/>
-        <activity android:name=".activity.TinkerActivity"/>
+        <activity android:name=".activity.PortfoliosActivity"/>
         <activity android:name=".activity.PswActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
