@@ -272,4 +272,5 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
             }
         }
     }
+
 }

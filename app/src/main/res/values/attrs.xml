@@ -30,4 +30,16 @@
         <attr name="fixText" format="string" />
         <attr name="fixTextSize" format="dimension" />
     </declare-styleable>
+
+
+    <declare-styleable name="DiffuseView">
+        <!--圆颜色-->
+        <attr name="diffuse_color" format="color"/>
+        <!--中心圆图片-->
+        <attr name="diffuse_coreImageRadius" format="integer"/>
+        <!--扩散圆之间间距,值越小越窄-->
+        <attr name="diffuse_width" format="integer"/>
+    </declare-styleable>
+
+
 </resources>

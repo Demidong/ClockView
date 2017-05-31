@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'kotlin-android'
 
 android {
     signingConfigs {
@@ -58,12 +58,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //圆形状图片
+    compile files('libs/nineoldandroids-2.4.0.jar')
     compile 'de.hdodenhof:circleimageview:2.0.0'
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:recyclerview-v7:23.2.1'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.8'
-    testCompile 'junit:junit:4.12'
-    compile files('libs/nineoldandroids-2.4.0.jar')
     compile 'com.squareup.okhttp3:okhttp:3.3.1'
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'io.reactivex:rxandroid:1.2.1'
@@ -72,4 +71,10 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.github.Blincheng:Toast:v1.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

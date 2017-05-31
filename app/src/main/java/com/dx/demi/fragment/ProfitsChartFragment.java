@@ -64,9 +64,9 @@ public class ProfitsChartFragment extends Fragment {
             Profits redpoint =new Profits();
             Profits bluepoint =new Profits();
             redpoint.setTradeDay(System.currentTimeMillis()+i*30);
-            redpoint.setYield(0.23+i*0.01);
+            redpoint.setYield(Math.random());
             bluepoint.setTradeDay(System.currentTimeMillis()+i*30);
-            bluepoint.setYield(0.23-i*0.01);
+            bluepoint.setYield(Math.random());
             redPoints.add(redpoint);
             bluePoints.add(bluepoint);
         }
