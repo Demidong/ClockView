@@ -32,13 +32,13 @@
     </declare-styleable>
 
 
-    <declare-styleable name="DiffuseView">
+    <declare-styleable name="WaveView">
         <!--圆颜色-->
-        <attr name="diffuse_color" format="color"/>
-        <!--中心圆图片-->
-        <attr name="diffuse_coreImageRadius" format="integer"/>
-        <!--扩散圆之间间距,值越小越窄-->
-        <attr name="diffuse_width" format="integer"/>
+        <attr name="wave_color" format="color"/>
+        <!--中心圆图片半径-->
+        <attr name="wave_coreImageRadius" format="integer"/>
+        <!--波浪圆之间间距,值越小越窄-->
+        <attr name="wave_width" format="integer"/>
     </declare-styleable>
 
 

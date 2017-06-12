@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.dx.demi.R;
 
 /**
- * Created by tong on 17/4/24.
+ * Created by demi on 17/4/24.
  */
 public class TabContainer extends LinearLayout {
     private int currentPosition;
