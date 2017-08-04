@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.dx.demi.R;
 import com.dx.demi.UrlService;
+import com.dx.demi.bean.DailyYeildsInfo;
 import com.dx.demi.bean.ListInfo;
 import com.dx.demi.bean.Profits;
 import com.dx.demi.bean.ResponseData;
@@ -57,16 +58,16 @@ public class ProfitsChartFragment extends Fragment {
                 .client(okHttpClient)
                 .build();
         UrlService service = retrofit.create(UrlService.class);
-        Call<ResponseData<ListInfo<Profits>>> call = service.getDatas("520");
-        call.enqueue(new Callback<ResponseData<ListInfo<Profits>>>() {
+        Call<ResponseData<DailyYeildsInfo>> call = service.getDatas("520","LAST_ALL");
+        call.enqueue(new Callback<ResponseData<DailyYeildsInfo>>() {
             @Override
-            public void onResponse(Call<ResponseData<ListInfo<Profits>>> call, Response<ResponseData<ListInfo<Profits>>> response) {
+            public void onResponse(Call<ResponseData<DailyYeildsInfo>> call, Response<ResponseData<DailyYeildsInfo>> response) {
                 // JSONObject js =new JSONObject(json);
                 chart.setData(response.body().getInfo());
             }
 
             @Override
-            public void onFailure(Call<ResponseData<ListInfo<Profits>>> call, Throwable t) {
+            public void onFailure(Call<ResponseData<DailyYeildsInfo>> call, Throwable t) {
                 t.printStackTrace();
             }
         });

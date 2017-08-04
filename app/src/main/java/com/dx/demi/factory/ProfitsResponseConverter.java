@@ -1,5 +1,6 @@
 package com.dx.demi.factory;
 
+import com.dx.demi.bean.DailyYeildsInfo;
 import com.dx.demi.bean.ListInfo;
 import com.dx.demi.bean.Profits;
 import com.dx.demi.bean.ResponseData;
@@ -25,7 +26,7 @@ public class ProfitsResponseConverter<T>  implements Converter<ResponseBody,T>{
     public T convert(ResponseBody value) throws IOException {
         String js = value.string();
         Gson gs = new Gson();
-        ResponseData<ListInfo<Profits>> info = gs.fromJson(js, new TypeToken<ResponseData<ListInfo<Profits>>>() {
+        ResponseData<DailyYeildsInfo> info = gs.fromJson(js, new TypeToken<ResponseData<DailyYeildsInfo>>() {
         }.getType());
 
         return (T) info;

@@ -70,10 +70,11 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'com.github.Blincheng:Toast:v1.2'
+    compile 'com.github.Blincheng:EToast2:v2.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
 }
 repositories {
     mavenCentral()

@@ -5,22 +5,22 @@ package com.dx.demi.bean;
  */
 
 public class Profits {
-    private long tradeDay;
-    private double yield;
+    private long time;
+    private double value;
 
-    public long getTradeDay() {
-        return tradeDay;
+    public long getTime() {
+        return time;
     }
 
-    public void setTradeDay(long tradeDay) {
-        this.tradeDay = tradeDay;
+    public void setTime(long time) {
+        this.time = time;
     }
 
-    public double getYield() {
-        return yield;
+    public double getValue() {
+        return value;
     }
 
-    public void setYield(double yield) {
-        this.yield = yield;
+    public void setValue(double value) {
+        this.value = value;
     }
 }

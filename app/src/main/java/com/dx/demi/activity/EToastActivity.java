@@ -9,10 +9,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.dx.demi.R;
-import com.yiguo.toast.EToast;
+import com.mic.etoast2.Toast;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -34,14 +33,16 @@ public class EToastActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isNotificationEnabled(EToastActivity.this)){
-                    Toast.makeText(EToastActivity.this,"我是Toast",Toast.LENGTH_LONG).show();
-                }else {
-                    EToast.makeText(EToastActivity.this,"我是EToast",EToast.LENGTH_LONG).show();
+                try {
+                    Toast.makeText(EToastActivity.this, "我是Toast", 3000).show();
+                  //  android.widget.Toast.makeText(EToastActivity.this, "我是Toast", android.widget.Toast.LENGTH_LONG).show();
+                }catch (Exception e){
+                    e.printStackTrace();
+                    android.widget.Toast.makeText(EToastActivity.this, "我是Toast", android.widget.Toast.LENGTH_LONG).show();
                 }
             }
         });
-    }
+}
     @TargetApi(Build.VERSION_CODES.KITKAT)
     public static boolean isNotificationEnabled(Context context) {
         if (Build.VERSION.SDK_INT < 19) {

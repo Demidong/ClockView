@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class ResponseData<T> {
     private String ret;
     private String msg;
-    private ArrayList<T>  info;
+    private T  info;
 
     public String getRet() {
         return ret;
@@ -27,11 +27,11 @@ public class ResponseData<T> {
         this.msg = msg;
     }
 
-    public ArrayList<T> getInfo() {
+    public T getInfo() {
         return info;
     }
 
-    public void setInfo(ArrayList<T> info) {
+    public void setInfo(T info) {
         this.info = info;
     }
 }

@@ -7,7 +7,6 @@
     <color name="transparent_background">#50000000</color>
     <color name="white">#ffffffff</color>
     <color name="black">#2b2f33</color>
-    <color name="dark_black">#575d66</color>
     <color name="gray">#999999</color>
     <color name="light_gray">#f2f2f2</color>
     <color name="red">#e4320e</color>
@@ -15,6 +14,7 @@
     <color name="yellow">#ffd03e</color>
     <color name="green">#12bc65</color>
     <color name="gray_black">#545b63</color>
+    <color name="dark_black">#000000</color>
 
     <color name="default_activity_bg">#f0eff4</color>
     <color name="me_head_bg">#0086ea</color>

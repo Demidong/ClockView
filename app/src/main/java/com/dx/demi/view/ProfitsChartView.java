@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.dx.demi.R;
+import com.dx.demi.bean.DailyYeildsInfo;
 import com.dx.demi.bean.ListInfo;
 import com.dx.demi.bean.Profits;
 import com.dx.demi.utils.FormatUtil;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 
 public class ProfitsChartView extends View {
 
-    private ArrayList<ListInfo<Profits>> data = new ArrayList<>();
+    private DailyYeildsInfo data = new DailyYeildsInfo();
     private ArrayList<Profits> redPoints = new ArrayList<>();
     private ArrayList<Profits> bluePoints = new ArrayList<>();
     private double highestPoint; //数据最高点
@@ -73,11 +74,11 @@ public class ProfitsChartView extends View {
         mPath = new Path();
     }
 
-    public ArrayList<ListInfo<Profits>> getData() {
+    public DailyYeildsInfo getData() {
         return data;
     }
 
-    public void setData(ArrayList<ListInfo<Profits>> data) {
+    public void setData(DailyYeildsInfo data) {
         this.data = data;
         highestPoint=0.0;
         lowestPoint=0.0;
@@ -86,15 +87,11 @@ public class ProfitsChartView extends View {
     }
 
     private void getPoints() {
-        for (int i = 0; i < data.size(); i++) {
-            ListInfo<Profits> list = data.get(i);
-            if (list.getType().equals("PORTFOLIO")) {
-                bluePoints.clear();
-                bluePoints.addAll(list.getList());
-            } else {
-                redPoints.clear();
-                redPoints.addAll(list.getList());
-            }
+        bluePoints.clear();
+        redPoints.clear();
+        if (data != null && data.getHS300() != null && data.getPORTFOLIO() != null) {
+            bluePoints.addAll(data.getPORTFOLIO());
+            redPoints.addAll(data.getHS300());
         }
         calculateDatas();
     }
@@ -102,7 +99,7 @@ public class ProfitsChartView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if(yAxisNum == 0||data.size()==0){
+        if (yAxisNum == 0 || data == null || bluePoints.size() <= 1 || redPoints.size() <= 1) {
             drawEmpty(canvas);     //如果没有数据
         }else{
             canvas.translate(0, topOffSet);
@@ -130,14 +127,14 @@ public class ProfitsChartView extends View {
     }
 
     private void drawChartXAxis(Canvas canvas) {
-        String start = FormatUtil.formatData(bluePoints.get(0).getTradeDay(), "yyyy-MM-dd");
+        String start = FormatUtil.formatData(bluePoints.get(0).getTime(), "yyyy-MM-dd");
         String center;
         if (bluePoints.size() % 2 == 0) {
-            center = FormatUtil.formatData(bluePoints.get(bluePoints.size() / 2 -1).getTradeDay(), "yyyy-MM-dd");
+            center = FormatUtil.formatData(bluePoints.get(bluePoints.size() / 2 -1).getTime(), "yyyy-MM-dd");
         } else {
-            center = FormatUtil.formatData(bluePoints.get((bluePoints.size() + 1) / 2 -1).getTradeDay(), "yyyy-MM-dd");
+            center = FormatUtil.formatData(bluePoints.get((bluePoints.size() + 1) / 2 -1).getTime(), "yyyy-MM-dd");
         }
-        String end = FormatUtil.formatData(bluePoints.get(bluePoints.size() - 1).getTradeDay(), "yyyy-MM-dd");
+        String end = FormatUtil.formatData(bluePoints.get(bluePoints.size() - 1).getTime(), "yyyy-MM-dd");
         textPaint.setTextSize(30);
         textPaint.setTextAlign(Paint.Align.LEFT);
         bottomOffSet = getFontHeight(textPaint);
@@ -172,20 +169,20 @@ public class ProfitsChartView extends View {
     }
 
     private void drawRedChartLine(Canvas canvas) {
-        mPath.moveTo(computePx(0, redPoints.size()), computePy((float) redPoints.get(0).getYield()));
+        mPath.moveTo(computePx(0, redPoints.size()), computePy((float) redPoints.get(0).getValue()));
         for (int i = 1; i < redPoints.size(); i++) {
             Profits point = redPoints.get(i);
-            mPath.lineTo(computePx(i, redPoints.size()), computePy((float) point.getYield()));
+            mPath.lineTo(computePx(i, redPoints.size()), computePy((float) point.getValue()));
         }
         canvas.drawPath(mPath, chartRedLinePaint);
         mPath.reset();
     }
 
     private void drawBlueChartLine(Canvas canvas) {
-        mPath.moveTo(computePx(0, bluePoints.size()), computePy((float) bluePoints.get(0).getYield()));
+        mPath.moveTo(computePx(0, bluePoints.size()), computePy((float) bluePoints.get(0).getValue()));
         for (int i = 1; i < bluePoints.size(); i++) {
             Profits point = bluePoints.get(i);
-            mPath.lineTo(computePx(i, bluePoints.size()), computePy((float) point.getYield()));
+            mPath.lineTo(computePx(i, bluePoints.size()), computePy((float) point.getValue()));
         }
         canvas.drawPath(mPath, chartBlueLinePaint);
         mPath.reset();
@@ -207,13 +204,13 @@ public class ProfitsChartView extends View {
 
     public void calculateDatas() {
         for (int i = 0; i < redPoints.size(); i++) {
-            double yield = redPoints.get(i).getYield();
+            double yield = redPoints.get(i).getValue();
             highestPoint = Math.max(highestPoint, yield);
             lowestPoint = Math.min(lowestPoint, yield);
         }
 
         for (int i = 0; i < bluePoints.size(); i++) {
-            double yield = bluePoints.get(i).getYield();
+            double yield = bluePoints.get(i).getValue();
             highestPoint = Math.max(highestPoint, yield);
             lowestPoint = Math.min(lowestPoint, yield);
         }

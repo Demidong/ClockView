@@ -22,7 +22,7 @@ public class DensityUtils
 	 * dp转px
 	 * 
 	 * @param context
-	 * @param val
+	 * @param dpVal
 	 * @return
 	 */
 	public static int dp2px(Context context, float dpVal)
@@ -33,8 +33,8 @@ public class DensityUtils
 	/**
 	 * dp转px
 	 *
-	 * @param context
-	 * @param val
+	 * @param res
+	 * @param dpVal
 	 * @return
 	 */
 	public static int dp2px(Resources res, float dpVal)
@@ -47,7 +47,7 @@ public class DensityUtils
 	 * sp转px
 	 * 
 	 * @param context
-	 * @param val
+	 * @param spVal
 	 * @return
 	 */
 	public static int sp2px(Context context, float spVal)
@@ -72,7 +72,7 @@ public class DensityUtils
 	/**
 	 * px转sp
 	 * 
-	 * @param fontScale
+	 * @param context
 	 * @param pxVal
 	 * @return
 	 */

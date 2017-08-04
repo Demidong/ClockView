@@ -15,8 +15,7 @@ import com.dx.demi.R;
 import com.dx.demi.bean.Point;
 import com.dx.demi.view.NinePointView;
 import com.dx.demi.view.NineSquareView;
-import com.yiguo.toast.EToast;
-import com.yiguo.toast.Toast;
+import com.mic.etoast2.EToast2;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -95,7 +94,7 @@ public class PswActivity extends Activity {
                     } else {
                         notice.setTextColor(Color.RED);
                         notice.setText("与首次绘制不一致,请再次绘制");
-                        Toast.makeText(PswActivity.this,"与首次绘制不一致,请再次绘制",Toast.LENGTH_LONG).show();
+                        EToast2.makeText(PswActivity.this,"与首次绘制不一致,请再次绘制",EToast2.LENGTH_LONG).show();
                         pswpoints.clear();
                     }
                 }

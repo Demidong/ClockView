@@ -49,6 +49,7 @@
         <activity android:name=".activity.kotActivity">
         </activity>
         <activity android:name=".activity.WaveActivity"/>
+        <activity android:name=".activity.VideoPlayerActivity"/>
     </application>
 
 </manifest>
