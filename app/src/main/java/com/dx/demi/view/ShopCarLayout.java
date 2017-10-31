@@ -55,8 +55,8 @@ public class ShopCarLayout extends FrameLayout {
 
         final CircleImageView iview = new CircleImageView(context);
         iview.setImageDrawable(drawable);
-        // final View view = addViewToAnimLayout(this,iview,start_location);
-        //view.setAlpha(0.6f);
+         final View view = addViewToAnimLayout(this,iview,start_location);
+        view.setAlpha(0.6f);
 
         int[] end_location = new int[2];
         finish_view.getLocationInWindow(end_location);

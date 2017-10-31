@@ -35,7 +35,7 @@ public class NotifyCationActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (mNotificationManager != null) {
-                    mNotificationManager.cancel(0);
+                    mNotificationManager.cancel(1);
                 }
             }
         });
@@ -63,7 +63,7 @@ public class NotifyCationActivity extends Activity {
                         .setTicker("微盘宝更新下载")
                         .setContent(contentView);
                 mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                mNotificationManager.notify(0, mBuild.build());
+                mNotificationManager.notify(1, mBuild.build());
             }
         });
 

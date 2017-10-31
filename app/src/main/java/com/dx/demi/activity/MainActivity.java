@@ -1,5 +1,6 @@
 package com.dx.demi.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import com.dx.demi.bean.Samples;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     RecyclerView rcv ;
     Class[] clazz = {PieChatActivity.class, ClockActivity.class,CoordinateActivity.class,EventActivity.class,
             ListActivity.class,NotifyCationActivity.class,ShopCarActivity.class,CameraActivity.class,
