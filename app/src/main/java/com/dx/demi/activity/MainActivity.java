@@ -22,12 +22,12 @@ public class MainActivity extends Activity {
     Class[] clazz = {PieChatActivity.class, ClockActivity.class,CoordinateActivity.class,EventActivity.class,
             ListActivity.class,NotifyCationActivity.class,ShopCarActivity.class,CameraActivity.class,
             EToastActivity.class,TimeConutDownActivity.class,AnimationActivity.class,ViewPagerActivity.class,
-            DownloadActivity.class,RetrofitOKHttpActivity.class,PercentActivity.class,PortfoliosActivity.class ,
-            WaveActivity.class,VideoPlayerActivity.class};
+            DownloadActivity.class,RetrofitOKHttpActivity.class,RxJavaActivity.class,PercentActivity.class,PortfoliosActivity.class ,
+            WaveActivity.class,VideoPlayerActivity.class,SelfDefinedActivity.class,FlowLayoutActivity.class};
     String[] describle = {"水果大拼盘","时钟表盘","坐标系","事件监听",
             "多布局RecycleView列表","通知栏事件监听","购物车动画","照相机",
-    "自定义Toast","倒计时","动画","ViewPager","下载apk","Retrofit",
-    "圆环百分比","收益走势图","雷达波浪View","视频播放器"};
+    "自定义Toast","倒计时","动画","ViewPager","下载apk","Retrofit","RXJava",
+    "圆环百分比","收益走势图","雷达波浪View","视频播放器","SelfDefinedActivity","FlowLayoutActivity"};
     ArrayList<Samples> sampleList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

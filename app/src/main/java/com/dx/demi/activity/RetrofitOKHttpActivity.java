@@ -77,14 +77,15 @@ public class RetrofitOKHttpActivity extends Activity implements View.OnClickList
         call.enqueue(new retrofit2.Callback<Bitmap>() {
             @Override
             public void onResponse(Call<Bitmap> call, final retrofit2.Response<Bitmap> response) {
-                mPlatform.execute(new Runnable() {
-                    @Override
-                    public void run() {
-//                        InputStream inputStream = response.body().byteStream();
-//                        Bitmap bitmap= BitmapFactory.decodeStream(inputStream);
-                        image.setImageBitmap(response.body());
-                    }
-                });
+//                mPlatform.execute(new Runnable() {
+//                    @Override
+//                    public void run() {
+////                        InputStream inputStream = response.body().byteStream();
+////                        Bitmap bitmap= BitmapFactory.decodeStream(inputStream);
+//
+//                    }
+//                });
+                image.setImageBitmap(response.body());
             }
 
             @Override

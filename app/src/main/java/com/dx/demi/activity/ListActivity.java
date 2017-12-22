@@ -23,14 +23,15 @@ import java.util.Random;
 
 public class ListActivity extends Activity {
     RecyclerView list_rcv;
-
+    TypeRecyclerAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         list_rcv = (RecyclerView) findViewById(R.id.list_rcv);
         list_rcv.setLayoutManager(new LinearLayoutManager(this));
-        list_rcv.setAdapter(new ListActivity.TypeRecyclerAdapter());
+        mAdapter = new ListActivity.TypeRecyclerAdapter();
+        list_rcv.setAdapter(mAdapter);
     }
 
     class TypeRecyclerAdapter extends RecyclerView.Adapter<TypeRecyclerAdapter.MyViewHolder> {
@@ -46,6 +47,12 @@ public class ListActivity extends Activity {
                 case title_type:
                     viewHolder = new TypeRecyclerAdapter.MyViewHolder(LayoutInflater.from(ListActivity.this).inflate(
                             R.layout.recycle_title, parent, false), title_type);
+                    viewHolder.name.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            list_rcv.scrollToPosition(0);
+                        }
+                    });
                     break;
                 case content_type:
                     viewHolder = new TypeRecyclerAdapter.MyViewHolder(LayoutInflater.from(ListActivity.this).inflate(

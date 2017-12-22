@@ -37,6 +37,7 @@
         <activity android:name=".activity.ViewPagerActivity"/>
         <activity android:name=".activity.DownloadActivity"/>
         <activity android:name=".activity.RetrofitOKHttpActivity"/>
+        <activity android:name=".activity.RxJavaActivity"/>
         <activity android:name=".activity.PercentActivity"/>
         <activity android:name=".activity.PortfoliosActivity"/>
         <activity android:name=".activity.PswActivity">
@@ -50,6 +51,8 @@
         </activity>
         <activity android:name=".activity.WaveActivity"/>
         <activity android:name=".activity.VideoPlayerActivity"/>
+        <activity android:name=".activity.SelfDefinedActivity"/>
+        <activity android:name=".activity.FlowLayoutActivity"/>
     </application>
 
 </manifest>

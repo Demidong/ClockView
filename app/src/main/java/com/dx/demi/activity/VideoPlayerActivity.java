@@ -32,7 +32,7 @@ public class VideoPlayerActivity extends Activity implements SurfaceHolder.Callb
         mMediaPlayer =new MediaPlayer();
         mSurfaceView.getHolder().addCallback(this);
         try {
-            mMediaPlayer.setDataSource("http://flashmedia.eastday.com/newdate/news/2016-11/shznews1125-19.mp4");
+            mMediaPlayer.setDataSource("http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8");
             mMediaPlayer.prepareAsync();
         } catch (IOException e) {
             e.printStackTrace();
