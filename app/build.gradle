@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 android {
     signingConfigs {
         config {
-            keyAlias 'dx168'
+            keyAlias 'dm168'
             keyPassword 'dong0821'
             storeFile file('/Users/demi/Documents/DAXIANG/ClockView/clock.jks')
             storePassword 'dong0515'

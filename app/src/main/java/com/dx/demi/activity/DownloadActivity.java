@@ -29,7 +29,7 @@ public class DownloadActivity extends Activity implements View.OnClickListener {
     private ProgressBar pb_update;
     private DownloadManager downloadManager;
     private DownloadManager.Request request;
-    public static String downloadUrl = "http://img.dx168.com/appweb/wechat/appceshi/app-release.apk";  //地址已无效
+    public static String downloadUrl = "";  //地址已无效
     Timer timer;
     long id;
     TimerTask task;
