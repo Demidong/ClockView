@@ -3,12 +3,11 @@ package com.dx.demi.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dx.demi.R;
-import com.dx.demi.view.CollapsExpandLayout;
 import com.dx.demi.view.MyFlowLayout;
+import com.dx.demi.view.ScaleImageView;
 
 /**
  * Created by demi on 16/11/28.
@@ -22,7 +21,7 @@ public class FlowLayoutActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flowlayout);
         mMyFlowLayout = (MyFlowLayout) findViewById(R.id.flow_ll);
-        ImageView imageView = (ImageView) findViewById(R.id.image);
+        ScaleImageView imageView = (ScaleImageView) findViewById(R.id.image);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -55,6 +55,7 @@
         <activity android:name=".activity.SelfDefinedActivity"/>
         <activity android:name=".activity.FlowLayoutActivity"/>
         <activity android:name=".activity.InputEmojiActivity"/>
+        <activity android:name=".activity.MatrixActivity"/>
     </application>
 
 </manifest>

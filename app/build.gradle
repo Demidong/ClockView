@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     signingConfigs {
         config {
-            keyAlias 'dm168'
+            keyAlias 'dm126'
             keyPassword 'dong0821'
-            storeFile file('/Users/demi/Documents/DAXIANG/ClockView/clock.jks')
-            storePassword 'dong0515'
+            storeFile file('/Users/demi/Documents/DAXIANG/ClockView/love.jks')
+            storePassword 'dong0821'
         }
     }
 
