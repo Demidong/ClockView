@@ -16,6 +16,7 @@ import java.io.IOException;
 
 /**
  * Created by demi on 2017/5/27.
+ * 雷达波浪
  */
 
 public class WaveActivity extends Activity {

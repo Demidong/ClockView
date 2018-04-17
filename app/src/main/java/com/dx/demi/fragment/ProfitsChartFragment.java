@@ -15,6 +15,7 @@ import com.dx.demi.bean.ResponseData;
 import com.dx.demi.factory.ProfitsConverterFactory;
 import com.dx.demi.view.ProfitsChartView;
 import com.dx.demi.view.TabContainer;
+import com.mic.etoast2.Toast;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -63,6 +64,10 @@ public class ProfitsChartFragment extends Fragment {
             @Override
             public void onResponse(Call<ResponseData<DailyYeildsInfo>> call, Response<ResponseData<DailyYeildsInfo>> response) {
                 // JSONObject js =new JSONObject(json);
+                if(response.body() == null){
+                    Toast.makeText(getContext(),"服务器挂了！！！",2000).show();
+                    return;
+                }
                 chart.setData(response.body().getInfo());
             }
 

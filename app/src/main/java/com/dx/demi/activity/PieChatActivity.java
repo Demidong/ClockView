@@ -13,6 +13,7 @@ import java.util.Random;
 
 /**
  * Created by demi on 16/11/28.
+ * 水果大拼盘
  */
 
 public class PieChatActivity extends Activity {

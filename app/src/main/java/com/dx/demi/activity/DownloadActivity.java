@@ -29,7 +29,7 @@ public class DownloadActivity extends Activity implements View.OnClickListener {
     private ProgressBar pb_update;
     private DownloadManager downloadManager;
     private DownloadManager.Request request;
-    public static String downloadUrl = "";  //地址已无效
+    public static String downloadUrl = "http://www.eoemarket.com/index/dl/id/30970/orderId/1/coId/0";
     Timer timer;
     long id;
     TimerTask task;
@@ -58,7 +58,7 @@ public class DownloadActivity extends Activity implements View.OnClickListener {
         downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
         request = new DownloadManager.Request(Uri.parse(downloadUrl));
 
-        request.setTitle("大象投教");
+        request.setTitle("测试apk包");
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
         request.setAllowedOverRoaming(false);
         request.setMimeType("application/vnd.android.package-archive");

@@ -8,6 +8,7 @@ import com.dx.demi.fragment.ProfitsChartFragment;
 
 /**
  * Created by demi on 2017/5/12.
+ * 收益走势图
  */
 
 public class PortfoliosActivity extends FragmentActivity {

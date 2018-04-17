@@ -1,4 +1,4 @@
-package com.dx.demi.activity;
+package com.dx.demi.bean;
 
 import java.util.ArrayList;
 

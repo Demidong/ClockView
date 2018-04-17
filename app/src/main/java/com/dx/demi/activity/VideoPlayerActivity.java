@@ -29,7 +29,7 @@ public class VideoPlayerActivity extends Activity implements SurfaceHolder.Callb
         mSurfaceView = (SurfaceView) findViewById(R.id.surface_view);
         play = (ImageView) findViewById(R.id.play);
         time = (TextView) findViewById(R.id.time);
-        mMediaPlayer =new MediaPlayer();
+        mMediaPlayer = new MediaPlayer();
         mSurfaceView.getHolder().addCallback(this);
         try {
             mMediaPlayer.setDataSource("http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8");

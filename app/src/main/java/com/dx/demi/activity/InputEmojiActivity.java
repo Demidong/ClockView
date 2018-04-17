@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.dx.demi.R;
 import com.dx.demi.adapter.EmojiAdapter;
+import com.dx.demi.bean.EmojiData;
 
 import java.util.ArrayList;
 

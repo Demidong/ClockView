@@ -147,7 +147,7 @@ static List<Student> stuList = new ArrayList<Student>(){
         }).filter(new Func1<File, Boolean>() {
             @Override
             public Boolean call(File file) {
-                return file.getName().endsWith(".mp4");
+                return file.getName().endsWith(".txt");
             }
         }).subscribe(new Observer<File>() {
             @Override
