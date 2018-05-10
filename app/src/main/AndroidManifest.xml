@@ -56,6 +56,10 @@
         <activity android:name=".activity.FlowLayoutActivity"/>
         <activity android:name=".activity.InputEmojiActivity"/>
         <activity android:name=".activity.MatrixActivity"/>
+        <activity android:name=".activity.MPChart.LineChartActivity"/>
+        <activity android:name=".activity.MyServiceActivity"/>
+
+        <service android:name=".CountService"/>
     </application>
 
 </manifest>

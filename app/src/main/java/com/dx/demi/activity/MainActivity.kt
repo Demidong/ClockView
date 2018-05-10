@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.dx.demi.R
+import com.dx.demi.activity.MPChart.LineChartActivity
 import com.dx.demi.adapter.DividerItemDecoration
 import com.dx.demi.adapter.SamplesAdapter
 import com.dx.demi.bean.Samples
@@ -14,8 +15,8 @@ import java.util.*
 
 
 class MainActivity : Activity() {
-    private var clazz = arrayOf(MatrixActivity::class.java, PieChatActivity::class.java, ClockActivity::class.java, CoordinateActivity::class.java, EventActivity::class.java, ListActivity::class.java, NotifyCationActivity::class.java, ShopCarActivity::class.java, CameraActivity::class.java, EToastActivity::class.java, TimeConutDownActivity::class.java, AnimationActivity::class.java, ViewPagerActivity::class.java, DownloadActivity::class.java, RetrofitOKHttpActivity::class.java, RxJavaActivity::class.java, PercentActivity::class.java, PortfoliosActivity::class.java, WaveActivity::class.java, VideoPlayerActivity::class.java, SelfDefinedActivity::class.java, FlowLayoutActivity::class.java, InputEmojiActivity::class.java)
-    private var describle = arrayOf("Matrix", "水果大拼盘", "时钟表盘", "坐标系", "事件监听", "多布局RecycleView列表", "通知栏事件监听", "购物车动画", "照相机", "自定义Toast", "倒计时", "动画", "ViewPager", "下载apk", "Retrofit", "RXJava", "圆环百分比", "收益走势图", "雷达波浪View", "视频播放器", "SelfDefinedActivity", "FlowLayoutActivity", "InputEmojiActivity")
+    private var clazz = arrayOf(MyServiceActivity::class.java, LineChartActivity::class.java,MatrixActivity::class.java, PieChatActivity::class.java, ClockActivity::class.java, CoordinateActivity::class.java, EventActivity::class.java, ListActivity::class.java, NotifyCationActivity::class.java, ShopCarActivity::class.java, CameraActivity::class.java, EToastActivity::class.java, TimeConutDownActivity::class.java, AnimationActivity::class.java, ViewPagerActivity::class.java, DownloadActivity::class.java, RetrofitOKHttpActivity::class.java, RxJavaActivity::class.java, PercentActivity::class.java, PortfoliosActivity::class.java, WaveActivity::class.java, VideoPlayerActivity::class.java, SelfDefinedActivity::class.java, FlowLayoutActivity::class.java, InputEmojiActivity::class.java)
+    private var describle = arrayOf("MyServiceActivity","LineChartActivity","Matrix", "水果大拼盘", "时钟表盘", "坐标系", "事件监听", "多布局RecycleView列表", "通知栏事件监听", "购物车动画", "照相机", "自定义Toast", "倒计时", "动画", "ViewPager", "下载apk", "Retrofit", "RXJava", "圆环百分比", "收益走势图", "雷达波浪View", "视频播放器", "SelfDefinedActivity", "FlowLayoutActivity", "InputEmojiActivity")
     private var sampleList = ArrayList<Samples>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +35,6 @@ class MainActivity : Activity() {
         sampleAdapter.onItemChildClickListener = BaseQuickAdapter.OnItemChildClickListener { adapter, _, position ->
             val sample = adapter.getItem(position) as Samples
             startActivity(Intent(this@MainActivity, sample.mClass))
-            true
         }
     }
 

@@ -13,16 +13,16 @@ android {
     }
 
     def javaVersion = JavaVersion.VERSION_1_7
-    compileSdkVersion 23
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
     compileOptions {
         sourceCompatibility javaVersion
         targetCompatibility javaVersion
     }
     defaultConfig {
         applicationId "com.dx.demi"
-        minSdkVersion 15
-        targetSdkVersion 22
+        minSdkVersion 16
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -61,8 +61,8 @@ dependencies {
     //圆形状图片
     implementation files('libs/nineoldandroids-2.4.0.jar')
     implementation "de.hdodenhof:circleimageview:2.2.0"
-    implementation 'com.android.support:appcompat-v7:23.4.0'
-    implementation 'com.android.support:recyclerview-v7:23.4.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.squareup.okhttp3:okhttp:3.8.1'
@@ -72,11 +72,18 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     implementation 'com.github.Blincheng:EToast2:v2.0.2'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     implementation 'com.github.iwgang:countdownview:2.1.6'
+    //key value存取
+    implementation 'com.orhanobut:hawk:2.0.1'
+    //沉浸式状态栏工具
+    implementation 'com.jaeger.statusbarutil:library:1.4.0'
+    //工具类地址
+    implementation 'com.blankj:utilcode:1.5.1'
+    compile 'com.android.support:design:27.1.1'
 }
 repositories {
     mavenCentral()
