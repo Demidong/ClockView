@@ -12,3 +12,4 @@ class kotActivity : AppCompatActivity() {
         setContentView(R.layout.activity_kot)
     }
 }
+

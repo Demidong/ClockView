@@ -77,6 +77,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     implementation 'com.github.iwgang:countdownview:2.1.6'
+    //动态权限申请
+    implementation 'pub.devrel:easypermissions:0.4.0'
     //key value存取
     implementation 'com.orhanobut:hawk:2.0.1'
     //沉浸式状态栏工具
@@ -84,6 +86,9 @@ dependencies {
     //工具类地址
     implementation 'com.blankj:utilcode:1.5.1'
     compile 'com.android.support:design:27.1.1'
+    debugImplementation 'com.exyui.android:debug-bottle-runtime:1.1.1'
+    releaseImplementation 'com.exyui.android:debug-bottle-noop-kotlin:1.1.1'
+    testImplementation 'com.exyui.android:debug-bottle-noop-kotlin:1.1.1'
 }
 repositories {
     mavenCentral()

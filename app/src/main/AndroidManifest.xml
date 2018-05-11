@@ -17,6 +17,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name=".DemiApp"
         android:theme="@style/NoTitleTheme">
         <activity android:name=".activity.MainActivity">
         </activity>
@@ -44,7 +45,7 @@
         <activity android:name=".activity.PswActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -60,6 +61,11 @@
         <activity android:name=".activity.MyServiceActivity"/>
 
         <service android:name=".CountService"/>
+
+        <activity
+            android:name="com.exyui.android.debugbottle.components.DTDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:label="Demi调试工具"/>
     </application>
 
 </manifest>
