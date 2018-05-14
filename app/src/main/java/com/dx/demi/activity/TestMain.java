@@ -1,6 +1,5 @@
 package com.dx.demi.activity;
 
-import com.squareup.haha.perflib.Main;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +11,8 @@ import java.util.Arrays;
 
 public class TestMain {
     public static void main(String args[]){
-        int arr[] = new int[]{100,22,1,-1,-100,33,22};
+        int arr[] = new int[]{10,8,6,4,9,7,3,5,2,1};
+        int arr2[] = new int[]{1,2,3,4,5,6,7,8,9,10};
         insertSort(arr);
         shellSort(arr);
         selectSort(arr);
@@ -36,6 +36,7 @@ public class TestMain {
                 array[j + 1] = array[j];
             }
             array[j + 1] = temp;
+            System.out.println(Arrays.toString(array) + " i="+i);
         }
         System.out.println(Arrays.toString(array) + " insertSort");
     }
@@ -144,6 +145,7 @@ public class TestMain {
      */
     public static void bubbleSort(int[] array) {
         int temp = 0;
+        System.out.println(Arrays.toString(array)+" init");
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = 0; j < array.length - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
@@ -151,6 +153,7 @@ public class TestMain {
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
                 }
+                System.out.println(Arrays.toString(array) + " i="+i +"j="+j);
             }
         }
         System.out.println(Arrays.toString(array) + " bubbleSort");
