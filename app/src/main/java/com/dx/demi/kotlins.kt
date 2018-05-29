@@ -55,4 +55,15 @@ at com.intellij.rt.execution.application.AppMainV2.main(AppMainV2.java:107)
 
     }
 
+class Solution {
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        for(i in nums.indices-1){
+            if(nums[i]+nums[i+1]==target){
+                return intArrayOf(i,i+1)
+            }
+        }
+        return intArrayOf(0,1)
+    }
+}
+
 

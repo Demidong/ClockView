@@ -40,6 +40,11 @@
         <!--波浪圆之间间距,值越小越窄-->
         <attr name="wave_width" format="integer"/>
     </declare-styleable>
-
+    <declare-styleable name="TabLayoutView">
+        <attr name="tlv_text_color" format="color"/>
+        <attr name="tlv_text_size" format="dimension"/>
+        <attr name="tlv_indicator_width" format="dimension"/>
+        <attr name="tlv_selectedTextBold" format="boolean"/>
+    </declare-styleable>
 
 </resources>

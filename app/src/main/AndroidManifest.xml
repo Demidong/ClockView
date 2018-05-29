@@ -59,6 +59,8 @@
         <activity android:name=".activity.MatrixActivity"/>
         <activity android:name=".activity.MPChart.LineChartActivity"/>
         <activity android:name=".activity.MyServiceActivity"/>
+        <activity android:name=".activity.FirstActivity"/>
+        <activity android:name=".activity.TwoActivity"/>
 
         <service android:name=".CountService"/>
 

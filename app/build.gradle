@@ -7,7 +7,7 @@ android {
         config {
             keyAlias 'dm126'
             keyPassword 'dong0821'
-            storeFile file('/Users/demi/Documents/DAXIANG/ClockView/love.jks')
+            storeFile file('../love.jks')
             storePassword 'dong0821'
         }
     }
@@ -85,7 +85,7 @@ dependencies {
     implementation 'com.jaeger.statusbarutil:library:1.4.0'
     //工具类地址
     implementation 'com.blankj:utilcode:1.5.1'
-    compile 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
     debugImplementation 'com.exyui.android:debug-bottle-runtime:1.1.1'
     releaseImplementation 'com.exyui.android:debug-bottle-noop-kotlin:1.1.1'
     testImplementation 'com.exyui.android:debug-bottle-noop-kotlin:1.1.1'

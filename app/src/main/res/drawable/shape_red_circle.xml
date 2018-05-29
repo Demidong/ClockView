@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="oval"
+       android:useLevel="false">
+    <solid android:color="@color/positive"/>
+    <!--solid表示远的填充色、stroke则代表远的边框线、-->
+    <solid android:color="@color/positive"/>
+    <size
+        android:width="15dp"
+        android:height="15dp"/>
+</shape>
