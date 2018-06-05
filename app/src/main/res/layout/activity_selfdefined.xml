@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.dx.demi.view.CollapsExpandLayout
+    <com.xd.demi.view.CollapsExpandLayout
         android:id="@+id/collaps_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.dx.demi.view.CollapsExpandLayout>
+    </com.xd.demi.view.CollapsExpandLayout>
 
 </LinearLayout>

@@ -60,7 +60,7 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <com.dx.demi.view.TabContainer
+    <com.xd.demi.view.TabContainer
         android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
         android:layout_marginRight="16dp"
         android:tag="创建以来,近3月,近1月"/>
 
-        <com.dx.demi.view.ProfitsChartView
+        <com.xd.demi.view.ProfitsChartView
             android:id="@+id/chart"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"

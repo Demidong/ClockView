@@ -4,14 +4,14 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <com.dx.demi.view.MyFlowLayout
+    <com.xd.demi.view.MyFlowLayout
         android:id="@+id/flow_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.dx.demi.view.MyFlowLayout>
+    </com.xd.demi.view.MyFlowLayout>
 
-    <com.dx.demi.view.ScaleImageView
+    <com.xd.demi.view.ScaleImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
-    <com.dx.demi.view.OvalProgrossView
+    <com.xd.demi.view.OvalProgrossView
         android:id="@+id/oval"
         android:layout_width="300dp"
         android:layout_height="match_parent"

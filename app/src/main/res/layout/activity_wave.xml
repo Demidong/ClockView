@@ -7,7 +7,7 @@
     android:background="@color/black"
     >
 
-    <com.dx.demi.view.WaveView
+    <com.xd.demi.view.WaveView
         android:id="@+id/wave"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

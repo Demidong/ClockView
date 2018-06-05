@@ -21,7 +21,7 @@
         android:alpha="0.5"
         android:background="@color/gray" />
 
-    <com.dx.demi.view.NinePointView
+    <com.xd.demi.view.NinePointView
         android:id="@+id/npv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         android:text=""
         android:textColor="@color/black" />
 
-    <com.dx.demi.view.NineSquareView
+    <com.xd.demi.view.NineSquareView
         android:id="@+id/nsv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

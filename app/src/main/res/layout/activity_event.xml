@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.dx.demi.view.EventLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<com.xd.demi.view.EventLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                    android:orientation="vertical" android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
     <TextView
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_margin="10dp"/>
-    <com.dx.demi.view.EventView
+    <com.xd.demi.view.EventView
         android:id="@+id/event"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/deep_red"/>
 
-</com.dx.demi.view.EventLinearLayout>
+</com.xd.demi.view.EventLinearLayout>

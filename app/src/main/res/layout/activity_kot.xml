@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dx.demi.activity.kotActivity"
+    tools:context="com.xd.demi.activity.kotActivity"
     tools:layout_editor_absoluteY="25dp">
 
 

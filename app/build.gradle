@@ -20,7 +20,7 @@ android {
         targetCompatibility javaVersion
     }
     defaultConfig {
-        applicationId "com.dx.demi"
+        applicationId "com.xd.demi"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
