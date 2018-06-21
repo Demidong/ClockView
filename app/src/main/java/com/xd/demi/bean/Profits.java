@@ -23,4 +23,10 @@ public class Profits {
     public void setValue(double value) {
         this.value = value;
     }
+
+    public Profits(long time, double value) {
+        this.time = time;
+        this.value = value;
+    }
 }
+

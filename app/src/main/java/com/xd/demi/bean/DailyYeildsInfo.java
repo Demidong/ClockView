@@ -26,3 +26,5 @@ public class DailyYeildsInfo {
         this.PORTFOLIO = PORTFOLIO;
     }
 }
+
+

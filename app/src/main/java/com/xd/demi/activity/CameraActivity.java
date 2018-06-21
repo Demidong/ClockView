@@ -26,7 +26,7 @@ public class CameraActivity extends Activity {
         setContentView(R.layout.activity_camera);
         cameraview = (CameraSurfaceView) findViewById(R.id.cameraview);
         transform = (ImageView) findViewById(R.id.transform);
-        Toast.makeText(CameraActivity.this,"请按音量下键拍照",Toast.LENGTH_LONG).show();
+        Toast.makeText(CameraActivity.this, "请按音量下键拍照", Toast.LENGTH_LONG).show();
         transform.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

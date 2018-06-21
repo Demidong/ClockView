@@ -23,112 +23,113 @@ public class TestMain {
         //bubbleSort(arr2);
 //        CocktailSort(arr2);
 
-        quick_sort(arr,0,arr.length-1);
-     //   radixSort(arr);
-       //System.out.print(  longestPalindrome2("abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa"));
-
+        //   quick_sort(arr,0,arr.length-1);
+        //   radixSort(arr);
+        //System.out.print(  longestPalindrome2("abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa"));
+        System.out.print(reverse(1534236469) + "");
     }
 
 
-    public static  String longestPalindrome(String s) {
-        int temp = 0 ;
+    public static String longestPalindrome(String s) {
+        int temp = 0;
         int right = 1;
         int left = 0;
-        for (int i = 0; i <s.length() ; i++) {
-            for (int j = i+1; j <s.length() ; j++) {
-                if(s.charAt(i) == s.charAt(j)){
-                    temp =j+1;
-                    if(s.charAt(i) != s.charAt(left) && right -left  < temp-i){
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i + 1; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    temp = j + 1;
+                    if (s.charAt(i) != s.charAt(left) && right - left < temp - i) {
                         left = i;
                     }
                 }
             }
-            if(right - left < temp-i){
-                right = temp ;
+            if (right - left < temp - i) {
+                right = temp;
             }
         }
-        String str = s.substring(left,right);
+        String str = s.substring(left, right);
         for (int i = 0; i < str.length(); i++) {
-            if(i<= str.length()/2 && str.charAt(i) != str.charAt(str.length()-i-1)){
-                return s.substring(0,1);
+            if (i <= str.length() / 2 && str.charAt(i) != str.charAt(str.length() - i - 1)) {
+                return s.substring(0, 1);
             }
         }
         return str;
     }
 
-    public static  String longestPalindrome2(String s) {
-        if(s.length() == 1 ){
-            return  s;
+    public static String longestPalindrome2(String s) {
+        if (s.length() == 1) {
+            return s;
         }
         ArrayList<String> strings = new ArrayList<>();
-        for (int i = 0; i <s.length() ; i++) {
-            for (int j = i+1; j <s.length() ; j++) {
-                if(s.charAt(i) == s.charAt(j)){
-                    strings.add(s.substring(i,j+1));
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i + 1; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    strings.add(s.substring(i, j + 1));
                 }
             }
         }
-        System.out.print("11111 : "+Arrays.toString(strings.toArray()));
+        System.out.print("11111 : " + Arrays.toString(strings.toArray()));
         ArrayList<String> deleteList = new ArrayList<>();
         for (int i = 0; i < strings.size(); i++) {
-            String str  = strings.get(i);
-                for (int j = 1; j < str.length() ; j++) {
-                    if(str.charAt(j) != str.charAt(str.length()-j-1) && j< str.length()/2){
-                        deleteList.add(str);
-                        break;
-                    }
+            String str = strings.get(i);
+            for (int j = 1; j < str.length(); j++) {
+                if (str.charAt(j) != str.charAt(str.length() - j - 1) && j < str.length() / 2) {
+                    deleteList.add(str);
+                    break;
                 }
+            }
         }
-        for (int i = 0; i < deleteList.size() ; i++) {
+        for (int i = 0; i < deleteList.size(); i++) {
             strings.remove(deleteList.get(i));
         }
-        System.out.print("22222 : "+Arrays.toString(strings.toArray()));
+        System.out.print("22222 : " + Arrays.toString(strings.toArray()));
         int maxLength = 1;
         String result = String.valueOf(s.charAt(0));
-        for (int i = 0; i <strings.size() ; i++) {
-            String str  = strings.get(i);
-            if(maxLength < str.length()){
+        for (int i = 0; i < strings.size(); i++) {
+            String str = strings.get(i);
+            if (maxLength < str.length()) {
                 maxLength = str.length();
                 result = str;
             }
         }
         return result;
     }
-    public static  String longestPalindrome3(String s) {
-        if(s.length() == 1 ){
-            return  s;
+
+    public static String longestPalindrome3(String s) {
+        if (s.length() == 1) {
+            return s;
         }
         ArrayList<String> strings = new ArrayList<>();
         //先找出首尾相同的字符串
-        for (int i = 0; i <s.length() ; i++) {
-            for (int j = i+1; j <s.length() ; j++) {
-                if(s.charAt(i) == s.charAt(j)){
-                    strings.add(s.substring(i,j+1));
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i + 1; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    strings.add(s.substring(i, j + 1));
                 }
             }
         }
-        System.out.print("11111 : "+Arrays.toString(strings.toArray()));
+        System.out.print("11111 : " + Arrays.toString(strings.toArray()));
         //找出是回文的字符串
         ArrayList<String> deleteList = new ArrayList<>();
         for (int i = 0; i < strings.size(); i++) {
-            String str  = strings.get(i);
-                for (int j = 1; j < str.length() ; j++) {
-                    if(str.charAt(j) != str.charAt(str.length()-j-1) && j< str.length()/2){
-                        deleteList.add(str);
-                        break;
-                    }
+            String str = strings.get(i);
+            for (int j = 1; j < str.length(); j++) {
+                if (str.charAt(j) != str.charAt(str.length() - j - 1) && j < str.length() / 2) {
+                    deleteList.add(str);
+                    break;
                 }
+            }
         }
-        for (int i = 0; i < deleteList.size() ; i++) {
+        for (int i = 0; i < deleteList.size(); i++) {
             strings.remove(deleteList.get(i));
         }
-        System.out.print("22222 : "+Arrays.toString(strings.toArray()));
+        System.out.print("22222 : " + Arrays.toString(strings.toArray()));
         //找出最长的那一个回文
         int maxLength = 1;
         String result = String.valueOf(s.charAt(0));
-        for (int i = 0; i <strings.size() ; i++) {
-            String str  = strings.get(i);
-            if(maxLength < str.length()){
+        for (int i = 0; i < strings.size(); i++) {
+            String str = strings.get(i);
+            if (maxLength < str.length()) {
                 maxLength = str.length();
                 result = str;
             }
@@ -139,29 +140,30 @@ public class TestMain {
 
     /**
      * 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2 。
-
-     请找出这两个有序数组的中位数。要求算法的时间复杂度为 O(log (m+n)) 。
-
-     示例 1:
-
-     nums1 = [1, 3]
-     nums2 = [2]
-
-     中位数是 2.0
-     示例 2:
-
-     nums1 = [1, 2]
-     nums2 = [3, 4]
-
-     中位数是 (2 + 3)/2 = 2.5
+     * <p>
+     * 请找出这两个有序数组的中位数。要求算法的时间复杂度为 O(log (m+n)) 。
+     * <p>
+     * 示例 1:
+     * <p>
+     * nums1 = [1, 3]
+     * nums2 = [2]
+     * <p>
+     * 中位数是 2.0
+     * 示例 2:
+     * <p>
+     * nums1 = [1, 2]
+     * nums2 = [3, 4]
+     * <p>
+     * 中位数是 (2 + 3)/2 = 2.5
+     *
      * @param nums1
      * @param nums2
      * @return
      */
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int[] tmpArr = new int[nums1.length+nums2.length];
-        int right =0;
-        int left =0;
+        int[] tmpArr = new int[nums1.length + nums2.length];
+        int right = 0;
+        int left = 0;
         //third记录中间数组的索引
         int third = 0;
         while (left < nums1.length && right < nums2.length) {
@@ -181,11 +183,11 @@ public class TestMain {
         while (right < nums2.length) {
             tmpArr[third++] = nums2[right++];
         }
-        System.out.print( "middle："+Arrays.toString(tmpArr));
-        if(tmpArr.length%2==0){
-            return (tmpArr[tmpArr.length/2-1] + tmpArr[tmpArr.length/2]) * 0.5;
-        }else{
-            return tmpArr[tmpArr.length/2];
+        System.out.print("middle：" + Arrays.toString(tmpArr));
+        if (tmpArr.length % 2 == 0) {
+            return (tmpArr[tmpArr.length / 2 - 1] + tmpArr[tmpArr.length / 2]) * 0.5;
+        } else {
+            return tmpArr[tmpArr.length / 2];
         }
     }
 
@@ -201,11 +203,13 @@ public class TestMain {
     }
 
     public static int lengthOfLongestSubstring(String s) {
-        if(s == null && s.length()==0 ){ return  0;}
+        if (s == null && s.length() == 0) {
+            return 0;
+        }
         ArrayList<Character> list = new ArrayList<>();
         int max = 1;
         for (int i = 0; i < s.length() - 1; i++) {
-            if(!list.contains(s.charAt(i))){
+            if (!list.contains(s.charAt(i))) {
                 list.add(s.charAt(i));
             }
             for (int j = 1 + i; j < s.length(); j++) {
@@ -220,6 +224,7 @@ public class TestMain {
         }
         return max;
     }
+
     /**
      * 插入排序
      *
@@ -294,23 +299,23 @@ public class TestMain {
      * @param array
      */
     public static void heapSort(int[] array) {
-    /*
-     *  第一步：将数组堆化
-     *  beginIndex = 第一个非叶子节点。
-     *  从第一个非叶子节点开始即可。无需从最后一个叶子节点开始。
-     *  叶子节点可以看作已符合堆要求的节点，根节点就是它自己且自己以下值为最大。
-     */
+        /*
+         *  第一步：将数组堆化
+         *  beginIndex = 第一个非叶子节点。
+         *  从第一个非叶子节点开始即可。无需从最后一个叶子节点开始。
+         *  叶子节点可以看作已符合堆要求的节点，根节点就是它自己且自己以下值为最大。
+         */
         int len = array.length - 1;
         int beginIndex = (len - 1) >> 1;
         for (int i = beginIndex; i >= 0; i--) {
             maxHeapify(i, len, array);
         }
-    /*
-     * 第二步：对堆化数据排序
-     * 每次都是移出最顶层的根节点A[0]，与最尾部节点位置调换，同时遍历长度 - 1。
-     * 然后从新整理被换到根节点的末尾元素，使其符合堆的特性。
-     * 直至未排序的堆长度为 0。
-     */
+        /*
+         * 第二步：对堆化数据排序
+         * 每次都是移出最顶层的根节点A[0]，与最尾部节点位置调换，同时遍历长度 - 1。
+         * 然后从新整理被换到根节点的末尾元素，使其符合堆的特性。
+         * 直至未排序的堆长度为 0。
+         */
         for (int i = len; i > 0; i--) {
             swap(0, i, array);
             maxHeapify(0, i - 1, array);
@@ -353,24 +358,25 @@ public class TestMain {
      * @param array
      */
     public static void bubbleSort(int[] array) {
-        int temp ;
+        int temp;
         System.out.println(Arrays.toString(array) + " init");
-        boolean isChanged ;
+        boolean isChanged;
         for (int i = 0; i < array.length - 1; i++) {
             isChanged = false;
             for (int j = array.length - 1; j > i; j--) {
-                if (array[j-1] > array[j]) {
-                    temp = array[j-1];
-                    array[j-1] = array[j];
+                if (array[j - 1] > array[j]) {
+                    temp = array[j - 1];
+                    array[j - 1] = array[j];
                     array[j] = temp;
                     isChanged = true;
                 }
                 System.out.println(Arrays.toString(array) + " i=" + i + "j=" + j);
             }
-            if(!isChanged) return;
+            if (!isChanged) return;
         }
         System.out.println(Arrays.toString(array) + " bubbleSort");
     }
+
     /**
      * 鸡尾酒排序
      *
@@ -440,21 +446,18 @@ public class TestMain {
     }
 
     //快速排序
-   static void quick_sort(int s[], int l, int r)
-    {
-        if (l < r)
-        {
+    static void quick_sort(int s[], int l, int r) {
+        if (l < r) {
             //Swap(s[l], s[(l + r) / 2]); //将中间的这个数和第一个数交换 参见注1
             int i = l, j = r, x = s[l];
-            while (i < j)
-            {
-                while(i < j && s[j] >= x) // 从右向左找第一个小于x的数
+            while (i < j) {
+                while (i < j && s[j] >= x) // 从右向左找第一个小于x的数
                     j--;
-                    s[i] = s[j];
+                s[i] = s[j];
 
-                while(i < j && s[i] < x) // 从左向右找第一个大于等于x的数
+                while (i < j && s[i] < x) // 从左向右找第一个大于等于x的数
                     i++;
-                    s[j] = s[i];
+                s[j] = s[i];
             }
             s[i] = x;
             quick_sort(s, l, i - 1); // 递归调用
@@ -517,7 +520,6 @@ public class TestMain {
     }
 
 
-
     /**
      * 基数排序
      *
@@ -571,20 +573,54 @@ public class TestMain {
         System.out.println(Arrays.toString(array) + " radixSort");
     }
 
-//    public static  String convert(String s, int numRows) {
-//        StringBuilder sb = new StringBuilder();
-//        int sum = 2*(numRows-1);
-//        int a = 2*(numRows-1);
-//        int b = sum - a;
-//        int c = 0;
-//        for (int i = 0; i <s.length() ; i++) {
-//            sb.append(s.charAt(c));
-//            if(b > s.length()){
-//                a = a - 2;
-//                b = b + 2;
-//            }
-//        }
-//    }
+    /**
+     * Z字型转化
+     * 将字符串 "PAYPALISHIRING" 以Z字形排列成给定的行数：
+     * P   A   H   N
+     * A P L S I I G
+     * Y   I   R
+     */
+    public static String convert(String s, int numRows) {
+        int len = s.length();
+        int nodeLen = 2 * numRows - 2;//两整列之间的差 也就是等差数列中的d
+        String result = "";
+
+        if (len == 0 || numRows == 0 || numRows == 1)//特殊情况特殊处理
+            return s;
+
+        for (int i = 0; i < numRows; i++)//从第一行遍历到最后一行
+            for (int j = i; j < len; j += nodeLen) {
+                result += s.charAt(j);//第一行和最后一行 还有普通行的整列数字
+                if (i != 0 && i != numRows - 1 && j - 2 * i + nodeLen < len)
+                    result += s.charAt(j - 2 * i + nodeLen);//单列行的数字
+            }
+
+        return result;
+    }
+
+    //给定一个 32 位有符号整数，将整数中的数字进行反转。
+    public static int reverse(int x) {
+        if (x < 0) {
+            x = -x;
+            return -get(x);
+        } else {
+            return get(x);
+        }
+
+    }
+
+    public static int get(int x) {
+        int sum = 0;
+        while (x > 0) {
+            int temp = x % 10;
+            if (sum > Integer.MAX_VALUE / 10) {
+                return 0;
+            }
+            sum = sum * 10 + temp;
+            x = x / 10;
+        }
+        return sum;
+    }
 
 }
 
