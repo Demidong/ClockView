@@ -17,6 +17,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:testOnly="false"
         android:name="com.xd.demi.DemiApp"
         android:theme="@style/NoTitleTheme">
         <activity android:name="com.xd.demi.activity.MainActivity">
@@ -68,6 +69,7 @@
             android:name="com.exyui.android.debugbottle.components.DTDrawerActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:label="Demi调试工具"/>
+        <activity android:name=".activity.ScreenMatchActivity"/>
     </application>
 
 </manifest>
