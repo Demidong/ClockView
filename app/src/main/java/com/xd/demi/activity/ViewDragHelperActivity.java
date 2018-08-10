@@ -1,21 +1,17 @@
 package com.xd.demi.activity;
 
 import android.app.Activity;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Display;
 
 import com.xd.demi.R;
 
 /**
- * Created by demi on 16/11/28.
+ * Created by demi on 2018/7/4 上午9:22.
  */
-
-public class ClockActivity extends Activity {
+public class ViewDragHelperActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clock);
+        setContentView(R.layout.activity_drag);
     }
 }

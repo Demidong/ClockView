@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/green"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+    <com.xd.demi.view.ViewDragHelpLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/blue"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="@color/red"
+            android:gravity="center"
+            android:text="please drag me!"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="@color/yellow"
+            android:gravity="center"
+            android:text="please drag me!"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="#ff00ff"
+            android:gravity="center"
+            android:text="please drag me!"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="#00ffff"
+            android:gravity="center"
+            android:text="please drag me!"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="#66acf9"
+            android:gravity="center"
+            android:text="please drag me!"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="#ff7809"
+            android:gravity="center"
+            android:text="please drag me!"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="#dd1109"
+            android:gravity="center"
+            android:text="please drag me!"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="#11ccff"
+            android:gravity="center"
+            android:text="please drag me!"
+            />
+    </com.xd.demi.view.ViewDragHelpLayout>
+</RelativeLayout>

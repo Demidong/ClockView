@@ -17,6 +17,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.xd.demi.R;
@@ -217,7 +218,8 @@ public class PswActivity extends Activity implements EasyPermissions.PermissionC
     public void onPermissionsGranted(int requestCode, List<String> perms) {
         LogUtils.d("onPermissionsGranted:" + requestCode + ":" + perms.size());
         if (hasAllNeededPermissions()) {
-            launch();
+           // launch();
+            Toast.makeText(this, "权限已获取，请安心使用！", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/green"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+    <TextView
+        android:id="@+id/notice"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/red"
+        android:gravity="center"
+        android:text="好消息！好消息！Github被微软收购了"
+        />
+
+    <TextView
+        android:id="@+id/tv_to"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/notice"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="ScrollTo()"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_by"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_to"
+        android:gravity="center"
+        android:text="ScrollBy()"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_reset"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_by"
+        android:gravity="center"
+        android:text="Reset"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        />
+
+    <com.xd.demi.view.ScrollerLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/tv_reset"
+        android:background="@color/red"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:src="@mipmap/user"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/tv_by"
+            android:gravity="center"
+            android:text="Demi"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            />
+    </com.xd.demi.view.ScrollerLayout>
+
+</RelativeLayout>

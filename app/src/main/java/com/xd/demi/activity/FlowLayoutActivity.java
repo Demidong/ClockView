@@ -21,17 +21,25 @@ public class FlowLayoutActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flowlayout);
         mMyFlowLayout = (MyFlowLayout) findViewById(R.id.flow_ll);
-        ScaleImageView imageView = (ScaleImageView) findViewById(R.id.image);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView textView = new TextView(FlowLayoutActivity.this);
-                int a = (int) (Math.random() * texts.length);
-                textView.setText(texts[a]);
-                textView.setPadding(10,10,10,10);
-                textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_red_boder_shape));
-                mMyFlowLayout.addView(textView);
-            }
-        });
+//        ScaleImageView imageView = (ScaleImageView) findViewById(R.id.image);
+//        imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                TextView textView = new TextView(FlowLayoutActivity.this);
+//                int a = (int) (Math.random() * texts.length);
+//                textView.setText(texts[a]);
+//                textView.setPadding(10,10,10,10);
+//                textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_red_boder_shape));
+//                mMyFlowLayout.addView(textView);
+//            }
+//        });
+        for (int i = 0; i <texts.length ; i++) {
+            TextView textView = new TextView(FlowLayoutActivity.this);
+            textView.setText(texts[i]);
+            textView.setPadding(10,10,10,10);
+            textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_red_boder_shape));
+            mMyFlowLayout.addView(textView);
+        }
+
     }
 }

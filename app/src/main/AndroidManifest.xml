@@ -70,6 +70,8 @@
             android:theme="@style/Theme.AppCompat.Light"
             android:label="Demi调试工具"/>
         <activity android:name=".activity.ScreenMatchActivity"/>
+        <activity android:name=".activity.ViewDragHelperActivity"/>
+        <activity android:name=".activity.ScrollerActivity"/>
     </application>
 
 </manifest>

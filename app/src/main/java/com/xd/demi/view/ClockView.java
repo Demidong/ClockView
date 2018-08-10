@@ -1,15 +1,21 @@
 package com.xd.demi.view;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.ViewConfiguration;
 
 import java.util.Calendar;
+import java.util.logging.Logger;
 
 /**
  * Created by demi on 16/11/10.
@@ -64,7 +70,29 @@ public class ClockView extends SurfaceView implements SurfaceHolder.Callback, Ru
 
         setFocusable(true);
         setFocusableInTouchMode(true);
-
+        Configuration configuration = getResources().getConfiguration();
+        Log.i("国家码 ",configuration.mcc+""); //Mobile Country Code
+        Log.i("网络码 ",configuration.mnc+""); //Mobile Network Code
+        Log.i("设备的密度 ",configuration.densityDpi+"");
+        Log.i("字体 ",configuration.fontScale+"");
+        Log.i("键盘 ",configuration.keyboardHidden+"");
+        Log.i("键盘的类型 ",configuration.keyboard+"");
+        Log.i("当前的Locale",configuration.locale+"");
+        Log.i("判断系统上方向导航设备的类型 :",configuration.navigation+"");
+        Log.i("得到系统屏幕的方向 :",configuration.orientation+"");
+        Log.i("获取系统触摸屏的触摸方式 :",configuration.touchscreen+"");
+//        Log.i("颜色模式 :",configuration.colorMode+""); /
+        Log.i("高 ",configuration.screenHeightDp+"dp");
+        Log.i("宽 ",configuration.screenWidthDp+"dp");
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        Log.i("高 ",dm.heightPixels+"px");
+        Log.i("宽 ",dm.widthPixels+"px");
+        Log.i("宽 ",dm.densityDpi+"dp"); //系统默认的dpi 160 320,480
+        ViewConfiguration vcfg = ViewConfiguration.get(context);
+        Log.i("ScaledDoubleTapSlop()",vcfg.getScaledDoubleTapSlop()+"");
+        Log.i("getScaledTouchSlop()",vcfg.getScaledTouchSlop()+"");
+        Log.i("getLongPressTimeout()",ViewConfiguration.getLongPressTimeout()+"");
+        Log.i("getDoubleTapTimeout()",ViewConfiguration.getDoubleTapTimeout()+"");
 
     }
 

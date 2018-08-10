@@ -11,12 +11,13 @@ import com.xd.demi.adapter.DividerItemDecoration
 import com.xd.demi.adapter.SamplesAdapter
 import com.xd.demi.bean.Samples
 import kotlinx.android.synthetic.main.activity_main.*
+import org.joda.time.DateTime
 import java.util.*
 
 
 class MainActivity : Activity() {
-    private var clazz = arrayOf(ScreenMatchActivity::class.java,FirstActivity::class.java, MyServiceActivity::class.java, LineChartActivity::class.java, MatrixActivity::class.java, PieChatActivity::class.java, ClockActivity::class.java, CoordinateActivity::class.java, EventActivity::class.java, ListActivity::class.java, NotifyCationActivity::class.java, ShopCarActivity::class.java, CameraActivity::class.java, EToastActivity::class.java, TimeConutDownActivity::class.java, AnimationActivity::class.java, ViewPagerActivity::class.java, DownloadActivity::class.java, RetrofitOKHttpActivity::class.java, RxJavaActivity::class.java, PercentActivity::class.java, PortfoliosActivity::class.java, WaveActivity::class.java, VideoPlayerActivity::class.java, SelfDefinedActivity::class.java, FlowLayoutActivity::class.java, InputEmojiActivity::class.java)
-    private var describle = arrayOf("屏幕适配","Activity生命周期","MyServiceActivity","LineChartActivity","Matrix", "水果大拼盘", "时钟表盘", "坐标系", "事件监听", "多布局RecycleView列表", "通知栏事件监听", "购物车动画", "照相机", "自定义Toast", "倒计时", "动画", "ViewPager", "下载apk", "Retrofit", "RXJava", "圆环百分比", "收益走势图", "雷达波浪View", "视频播放器", "SelfDefinedActivity", "FlowLayoutActivity", "InputEmojiActivity")
+    private var clazz = arrayOf(ScrollerActivity::class.java,ViewDragHelperActivity::class.java,ScreenMatchActivity::class.java,FirstActivity::class.java, MyServiceActivity::class.java, LineChartActivity::class.java, MatrixActivity::class.java, PieChatActivity::class.java, ClockActivity::class.java, CoordinateActivity::class.java, EventActivity::class.java, ListActivity::class.java, NotifyCationActivity::class.java, ShopCarActivity::class.java, CameraActivity::class.java, EToastActivity::class.java, TimeConutDownActivity::class.java, AnimationActivity::class.java, ViewPagerActivity::class.java, DownloadActivity::class.java, RetrofitOKHttpActivity::class.java, RxJavaActivity::class.java, PercentActivity::class.java, PortfoliosActivity::class.java, WaveActivity::class.java, VideoPlayerActivity::class.java, SelfDefinedActivity::class.java, FlowLayoutActivity::class.java, InputEmojiActivity::class.java)
+    private var describle = arrayOf("Scroller","ViewDragHelper","屏幕适配","Activity生命周期","MyServiceActivity","LineChartActivity","Matrix", "水果大拼盘", "时钟表盘", "坐标系", "事件监听", "多布局RecycleView列表", "通知栏事件监听", "购物车动画", "照相机", "自定义Toast", "倒计时", "动画", "ViewPager", "下载apk", "Retrofit", "RXJava", "圆环百分比", "收益走势图", "雷达波浪View", "视频播放器", "SelfDefinedActivity", "FlowLayoutActivity", "InputEmojiActivity")
     private var sampleList = ArrayList<Samples>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +38,4 @@ class MainActivity : Activity() {
             startActivity(Intent(this@MainActivity, sample.mClass))
         }
     }
-
-
 }
