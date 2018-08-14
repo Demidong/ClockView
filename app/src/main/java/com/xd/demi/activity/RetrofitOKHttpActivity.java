@@ -12,9 +12,14 @@ import com.xd.demi.UrlService;
 import com.xd.demi.factory.BitmapConverterFactory;
 import com.xd.demi.utils.Platform;
 
+import org.reactivestreams.Subscription;
+
+import io.reactivex.FlowableSubscriber;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
-import retrofit2.Call;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 
 /**
@@ -70,20 +75,46 @@ public class RetrofitOKHttpActivity extends Activity implements View.OnClickList
                 .baseUrl("https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/")
                 .addConverterFactory(BitmapConverterFactory.create())
                 .client(okHttpClient)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         UrlService service = retrofit.create(UrlService.class);
-        Call<Bitmap> call = service.getImage();
-        call.enqueue(new retrofit2.Callback<Bitmap>() {
-            @Override
-            public void onResponse(Call<Bitmap> call, final retrofit2.Response<Bitmap> response) {
-                Bitmap bitmap = Bitmap.createBitmap(response.body(),0,0,response.body().getWidth(),response.body().getHeight() /2);
-                image.setImageBitmap(bitmap);
-            }
+//        Call<Bitmap> call = service.getImage();
+//        call.enqueue(new retrofit2.Callback<Bitmap>() {
+//            @Override
+//            public void onResponse(Call<Bitmap> call, final retrofit2.Response<Bitmap> response) {
+//                Bitmap bitmap = Bitmap.createBitmap(response.body(), 0, 0, response.body().getWidth(), response.body().getHeight() / 2);
+//                image.setImageBitmap(bitmap);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Bitmap> call, Throwable t) {
+//
+//            }
+//        });
+        service.getRXImage()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new FlowableSubscriber<Bitmap>() {
+                    @Override
+                    public void onSubscribe(Subscription s) {
+                        s.request(Integer.MAX_VALUE);
+                    }
 
-            @Override
-            public void onFailure(Call<Bitmap> call, Throwable t) {
+                    @Override
+                    public void onNext(Bitmap response) {
+                        Bitmap bitmap = Bitmap.createBitmap(response, 0, 0, response.getWidth(), response.getHeight() / 2);
+                        image.setImageBitmap(bitmap);
+                    }
 
-            }
-        });
+                    @Override
+                    public void onError(Throwable t) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 }

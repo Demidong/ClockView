@@ -19,7 +19,9 @@ import java.util.List;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 
 /**
@@ -90,9 +92,7 @@ static List<Student> stuList = new ArrayList<Student>(){
         //被观察者要订阅观察者
         observable.map(new Func1<String,String>() {
             @Override
-            public String call(String o) {
-                return o+", the early bird cathes the worm !";
-            }
+            public String call(String o) { return o+", the early bird cathes the worm !"; }
         }).subscribe(observer);
     }
 
@@ -140,7 +140,9 @@ static List<Student> stuList = new ArrayList<Student>(){
             public Boolean call(File file) {
                 return file.getName().endsWith(".txt");
             }
-        }).subscribe(new Observer<File>() {
+        }).subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
+                .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
+                .subscribe(new Observer<File>() {
             @Override
             public void onCompleted() {
                 Log.i("RxJavaActivity", "onCompleted: ");
