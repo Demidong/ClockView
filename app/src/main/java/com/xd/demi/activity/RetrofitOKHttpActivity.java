@@ -34,7 +34,7 @@ public class RetrofitOKHttpActivity extends Activity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitiy_retrofit);
+        setContentView(R.layout.activity_retrofit);
         image = (ImageView) findViewById(R.id.image);
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(this);

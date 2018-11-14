@@ -25,6 +25,7 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
 
@@ -58,6 +59,9 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    //多dex处理
+    implementation 'com.android.support:multidex:1.0.3'
     //圆形状图片
     implementation files('libs/nineoldandroids-2.4.0.jar')
     implementation "de.hdodenhof:circleimageview:2.2.0"

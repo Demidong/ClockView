@@ -72,6 +72,7 @@
         <activity android:name=".activity.ScreenMatchActivity"/>
         <activity android:name=".activity.ViewDragHelperActivity"/>
         <activity android:name=".activity.ScrollerActivity"/>
+        <activity android:name=".activity.ProduceConsumerActivity"/>
     </application>
 
 </manifest>

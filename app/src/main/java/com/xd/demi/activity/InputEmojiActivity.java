@@ -30,10 +30,10 @@ public class InputEmojiActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
-        send = (TextView) findViewById(R.id.send);
-        content = (TextView) findViewById(R.id.content);
-        emoji_grid = (GridView) findViewById(R.id.emoji_grid);
-        edit_input = (EditText) findViewById(R.id.edit_input);
+        send =  findViewById(R.id.send);
+        content =  findViewById(R.id.content);
+        emoji_grid =  findViewById(R.id.emoji_grid);
+        edit_input =  findViewById(R.id.edit_input);
         list = EmojiData.initEmojiString();
         adapter = new EmojiAdapter(list, InputEmojiActivity.this);
         emoji_grid.setAdapter(adapter);

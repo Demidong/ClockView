@@ -60,7 +60,7 @@ public class PswActivity extends Activity implements EasyPermissions.PermissionC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitiy_psw);
+        setContentView(R.layout.activity_psw);
         nineSquareView = (NineSquareView) findViewById(R.id.nsv);
         ninePointView = (NinePointView) findViewById(R.id.npv);
         title = (TextView) findViewById(R.id.title);

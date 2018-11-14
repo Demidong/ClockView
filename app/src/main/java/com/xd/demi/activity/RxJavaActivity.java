@@ -45,7 +45,7 @@ static List<Student> stuList = new ArrayList<Student>(){
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitiy_rx);
+        setContentView(R.layout.activity_rx);
         text_content = (TextView) findViewById(R.id.text_content);
         text_title = (TextView) findViewById(R.id.text_title);
         button = (Button) findViewById(R.id.button);

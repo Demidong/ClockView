@@ -11,7 +11,7 @@ class MatrixActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activitiy_matrix)
+        setContentView(R.layout.activity_matrix)
     }
 
 }

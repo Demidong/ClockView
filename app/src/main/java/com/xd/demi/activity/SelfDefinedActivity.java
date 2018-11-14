@@ -20,7 +20,7 @@ public class SelfDefinedActivity extends Activity {
         collaps_view = (CollapsExpandLayout) findViewById(R.id.collaps_view);
         collaps_view.setName("大势已去");
         ImageView imageView = new ImageView(SelfDefinedActivity.this);
-        imageView.setImageResource(R.mipmap.sky);
+        imageView.setImageResource(R.mipmap.nice);
         collaps_view.setContent(imageView);
     }
 }

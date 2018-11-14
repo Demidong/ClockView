@@ -1337,10 +1337,10 @@ public class EmojiData {
 
 
     //获取表情源数据
-    public static ArrayList initEmojiString() {
-        ArrayList list = new ArrayList<>();
-        for (int i = 0; i < emojiint.length; i++) {
-            list.add(getEmojiStringByUnicode(emojiint[i]));
+    public static ArrayList<String> initEmojiString() {
+        ArrayList<String> list = new ArrayList<>();
+        for (int anEmojiint : emojiint) {
+            list.add(getEmojiStringByUnicode(anEmojiint));
         }
         return list;
     }
