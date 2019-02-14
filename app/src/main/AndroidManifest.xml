@@ -73,6 +73,8 @@
         <activity android:name=".activity.ViewDragHelperActivity"/>
         <activity android:name=".activity.ScrollerActivity"/>
         <activity android:name=".activity.ProduceConsumerActivity"/>
+        <activity android:name=".activity.LoveActivity"/>
+        <activity android:name=".activity.TrendActivity"/>
     </application>
 
 </manifest>
