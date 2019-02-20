@@ -204,3 +204,5 @@
 -dontwarn retrofit2.**
 # sharesdk
 -dontwarn cn.sharesdk.**
+
+-dontwarn pub.devrel.**

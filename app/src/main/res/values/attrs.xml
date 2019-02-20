@@ -47,4 +47,26 @@
         <attr name="tlv_selectedTextBold" format="boolean"/>
     </declare-styleable>
 
+    <declare-styleable name="FloatWaitView">
+        <attr name="fwv_ovalNum" format="integer"/>
+        <attr name="fwv_wideSpace" format="dimension"/>
+        <attr name="fwv_floatHight" format="dimension"/>
+        <attr name="fwv_radius" format="dimension"/>
+        <attr name="fwv_color" format="color"/>
+        <attr name="fwv_bg" format="color"/>
+        <attr name="fwv_duration" format="integer"/>
+        <attr name="fwv_ovalInHorizontalCenter" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="SquareLoadingView">
+        <attr name="half_BlockWidth" format="dimension" />
+        <attr name="blockInterval" format="dimension" />
+        <attr name="initPosition" format="integer" />
+        <attr name="isClock_Wise" format="boolean" />
+        <attr name="lineNumber" format="integer"  />
+        <attr name="moveSpeed" format="integer"  />
+        <attr name="blockColor" format="color"  />
+        <attr name="moveBlock_Angle" format="float"  />
+        <attr name="fixBlock_Angle" format="float"  />
+        <attr name="move_Interpolator" format="reference"  />
+    </declare-styleable>
 </resources>

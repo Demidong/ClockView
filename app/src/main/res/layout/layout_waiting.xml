@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.xd.demi.view.FloatWaitView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:fwv_floatHight="100dp"
+        app:fwv_ovalNum="5"
+        app:fwv_radius="5dp"
+        app:fwv_bg="#00ff00"
+        app:fwv_ovalInHorizontalCenter="true"
+        app:fwv_color="#ff00aa"
+        app:fwv_wideSpace="5dp"/>
+</android.support.constraint.ConstraintLayout>

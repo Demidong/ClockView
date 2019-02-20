@@ -75,6 +75,7 @@
         <activity android:name=".activity.ProduceConsumerActivity"/>
         <activity android:name=".activity.LoveActivity"/>
         <activity android:name=".activity.TrendActivity"/>
+        <activity android:name=".activity.WaitIngActivity"/>
     </application>
 
 </manifest>

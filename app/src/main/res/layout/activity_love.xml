@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/bg_love"
+        android:scaleType="centerCrop"
+        />
 
     <com.xd.demi.view.LoveView
         android:id="@+id/love"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="往后余生都是你"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_below="@+id/love_text"
+        android:layout_marginTop="10dp"
+        android:textColor="#ff0000"
+        />
+    <TextView
+        android:id="@+id/love_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="小闹钟❤️小玲珑"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#ff0000"
         />
 
 
-</LinearLayout>
+</RelativeLayout>
