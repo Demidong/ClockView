@@ -5,14 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.xd.demi.view.FloatWaitView
+    <com.xd.demi.view.FloatLoadingView
+        android:id="@+id/floatWaitView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:fwv_floatHight="100dp"
-        app:fwv_ovalNum="5"
-        app:fwv_radius="5dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/blue"
+        app:flv_bg="#00ff00"
+        app:flv_color="#FFCCFF"
+        app:flv_duration="500"
+        app:flv_floatHight="50dp"
+        app:flv_ovalInHorizontalCenter="true"
+        app:flv_ovalNum="8"
+        app:flv_radius="10dp"
+        app:flv_wideSpace="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loading"/>
+
+    <com.xd.demi.view.FloatWaitView
+        android:id="@+id/wait"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
         app:fwv_bg="#00ff00"
+        app:fwv_color="#FFCCFF"
+        app:fwv_duration="800"
+        app:fwv_floatHight="50dp"
         app:fwv_ovalInHorizontalCenter="true"
-        app:fwv_color="#ff00aa"
-        app:fwv_wideSpace="5dp"/>
+        app:fwv_ovalNum="4"
+        app:fwv_radius="10dp"
+        app:fwv_wideSpace="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/floatWaitView"/>
+
+    <com.xd.demi.view.SquareLoadingView
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#FFCCFF"
+        app:blockColor="#ffffff"
+
+        app:blockInterval="8dp"
+        app:fixBlock_Angle="5"
+        app:half_BlockWidth="15dp"
+
+        app:initPosition="0"
+        app:isClock_Wise="false"
+        app:lineNumber="3"
+
+        app:moveBlock_Angle="20"
+        app:moveSpeed="500"
+        app:move_Interpolator="@android:anim/bounce_interpolator"
+        />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="114dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="停止动画"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start"/>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="116dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="104dp"
+        android:text="开始动画"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/floatWaitView"/>
+
+
 </android.support.constraint.ConstraintLayout>

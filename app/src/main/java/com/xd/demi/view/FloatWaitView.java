@@ -1,5 +1,7 @@
 package com.xd.demi.view;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -31,6 +33,8 @@ public class FloatWaitView extends View {
     private CountDownTimer timer;
     private ArrayList<Oval> mOvals = new ArrayList<>();
     int position = 0;
+    private boolean isUserStop = false;
+    private boolean isMoving = false;
 
     public FloatWaitView(Context context) {
         this(context, null);
@@ -55,14 +59,33 @@ public class FloatWaitView extends View {
         init();
     }
 
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        // 调用时刻：onCreate之后onDraw之前调用；view的大小发生改变就会调用该方法
+        int measuredWidth = getMeasuredWidth();
+        for (int i = 0; i < ovalNum; i++) {
+            Oval oval = mOvals.get(i);
+            if (ovalCenter)
+                oval.x = (measuredWidth - (wideSpace + 2 * radius) * ovalNum) / 2 + (wideSpace / 2 + radius) * (2 * i + 1);
+            else
+                oval.x = getPaddingLeft() + (wideSpace / 2 + radius) * (2 * i + 1);
+            oval.y = floatHight - radius;
+        }
+    }
+
     private void init() {
         mPaint = new Paint();
         mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setAntiAlias(true);
         for (int i = 0; i < ovalNum; i++) {
             Oval oval = new Oval();
             oval.mAnimator = createFloatAnimation(i);
             mOvals.add(oval);
         }
+    }
+
+    private void createTimer() {
         timer = new CountDownTimer(duration, duration / (ovalNum + 1)) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -74,11 +97,25 @@ public class FloatWaitView extends View {
 
             @Override
             public void onFinish() {
-                timer.cancel();
+
             }
         };
         timer.start();
     }
+
+    public void startMoving() {
+        if (isMoving || getVisibility() == INVISIBLE) {
+            return;
+        }
+        isMoving = true;
+        isUserStop = false;
+        createTimer();
+    }
+
+    public void stopMoving() {
+        isUserStop = true;
+    }
+
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -89,34 +126,39 @@ public class FloatWaitView extends View {
         mPaint.setColor(color);
         for (int i = 0; i < ovalNum; i++) {
             Oval oval = mOvals.get(i);
-            if (oval.x == 0) {
-                if (ovalCenter)
-                    oval.x = (getWidth() - (wideSpace + 2 * radius) * ovalNum) / 2 + (wideSpace / 2 + radius) * (2 * i + 1);
-                else
-                    oval.x = getPaddingLeft()+ (wideSpace / 2 + radius) * (2 * i + 1);
-            }
-            if (oval.y == 0) oval.y = floatHight - radius;
             canvas.drawCircle(oval.x, oval.y, radius, mPaint);
         }
 
     }
 
-    private ValueAnimator createFloatAnimation(final int position) {
-        ValueAnimator animator = ValueAnimator.ofFloat(floatHight- radius, radius);
-        animator.setRepeatCount(ValueAnimator.INFINITE);
-        animator.setRepeatMode(ValueAnimator.REVERSE);
+    private ValueAnimator createFloatAnimation(final int pos) {
+        ValueAnimator animator = ValueAnimator.ofFloat(floatHight - radius, radius, floatHight - radius);
         animator.setDuration(duration);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                Oval oval = mOvals.get(position);
+                Oval oval = mOvals.get(pos);
                 if (ovalCenter)
-                    oval.x = (getWidth() - (wideSpace + 2 * radius) * ovalNum) / 2 + (wideSpace / 2 + radius) * (2 * position + 1);
+                    oval.x = (getWidth() - (wideSpace + 2 * radius) * ovalNum) / 2 + (wideSpace / 2 + radius) * (2 * pos + 1);
                 else
-                    oval.x = getPaddingLeft()+ (wideSpace / 2 + radius) * (2 * position + 1);
+                    oval.x = getPaddingLeft() + (wideSpace / 2 + radius) * (2 * pos + 1);
                 oval.y = (float) animation.getAnimatedValue();
                 postInvalidate();
             }
+        });
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                if (pos == ovalNum - 1) {
+                    isMoving = false;
+                    position = 0;
+                    if (!isUserStop) {
+                        createTimer();
+                    }
+                }
+            }
+
         });
         return animator;
     }
@@ -149,10 +191,11 @@ public class FloatWaitView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        for (int i = 0; i < ovalNum; i++) {
-            Oval oval = mOvals.get(i);
-            oval.mAnimator.removeAllUpdateListeners();
-            oval.mAnimator.cancel();
+        isUserStop = true;
+        timer.cancel();
+        for (int i = 0; i < mOvals.size(); i++) {
+            mOvals.get(i).mAnimator.cancel();
+            mOvals.get(i).mAnimator.removeAllUpdateListeners();
         }
         mOvals.clear();
     }
