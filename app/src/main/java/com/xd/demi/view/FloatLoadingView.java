@@ -188,6 +188,13 @@ public class FloatLoadingView extends View {
         isUserStop = true;
     }
 
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        valueAnimator.removeAllUpdateListeners();
+        valueAnimator.cancel();
+    }
+
     private class MoveOval {
         PointF point;
         int index;

@@ -650,4 +650,11 @@ public class SquareLoadingView extends View {
         // 指向下一个需要移动的位置
         FixedBlock next;
     }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        mAnimatorSet.removeAllListeners();
+        mAnimatorSet.cancel();
+    }
 }

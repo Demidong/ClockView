@@ -29,6 +29,12 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
 
+        ndk{
+            moduleName "hello_jni"
+            stl "stlport_static"
+            ldLibs "log"
+        }
+
     }
     buildTypes {
         release {
@@ -49,6 +55,11 @@ android {
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
         }
     }
 }
