@@ -192,7 +192,9 @@ public class FloatWaitView extends View {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         isUserStop = true;
-        timer.cancel();
+        if(timer != null){
+            timer.cancel();
+        }
         for (int i = 0; i < mOvals.size(); i++) {
             mOvals.get(i).mAnimator.cancel();
             mOvals.get(i).mAnimator.removeAllUpdateListeners();

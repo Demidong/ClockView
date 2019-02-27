@@ -15,9 +15,9 @@ import org.joda.time.DateTime
 import java.util.*
 
 
-class MainActivity : Activity() {
-    private var clazz = arrayOf(CustomViewActivity::class.java,ProduceConsumerActivity::class.java, ScreenMatchActivity::class.java,FirstActivity::class.java, MyServiceActivity::class.java, MatrixActivity::class.java,  CoordinateActivity::class.java, EventActivity::class.java, ListActivity::class.java, NotifyCationActivity::class.java,  EToastActivity::class.java,  AnimationActivity::class.java,  DownloadActivity::class.java, RetrofitOKHttpActivity::class.java, RxJavaActivity::class.java,  PortfoliosActivity::class.java,  VideoPlayerActivity::class.java)
-    private var describle = arrayOf("自定义View","ProducerConsumer","屏幕适配","Activity生命周期","MyServiceActivity","Matrix", "坐标系", "事件监听", "多布局RecycleView列表", "通知栏事件监听", "自定义Toast",  "动画",  "下载apk", "Retrofit", "RXJava",  "收益走势图",  "视频播放器")
+class CustomViewActivity : Activity() {
+    private var clazz = arrayOf(WaitIngActivity::class.java,TrendActivity::class.java,LoveActivity::class.java,ScrollerActivity::class.java,ViewDragHelperActivity::class.java, LineChartActivity::class.java,  PieChatActivity::class.java, ClockActivity::class.java, CoordinateActivity::class.java,  ShopCarActivity::class.java, CameraActivity::class.java,  TimeConutDownActivity::class.java,  ViewPagerActivity::class.java,   PercentActivity::class.java,  WaveActivity::class.java,  SelfDefinedActivity::class.java, FlowLayoutActivity::class.java, InputEmojiActivity::class.java)
+    private var describle = arrayOf("WaitIngActivity","TrendActivity","LoveActivity","Scroller","ViewDragHelper","LineChartActivity", "水果大拼盘", "时钟表盘", "坐标系",  "购物车动画", "照相机", "倒计时", "ViewPager", "圆环百分比",  "雷达波浪View",  "SelfDefinedActivity", "FlowLayoutActivity", "InputEmojiActivity")
     private var sampleList = ArrayList<Samples>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,7 @@ class MainActivity : Activity() {
         rcv.addItemDecoration(DividerItemDecoration(this))
         sampleAdapter.onItemChildClickListener = BaseQuickAdapter.OnItemChildClickListener { adapter, _, position ->
             val sample = adapter.getItem(position) as Samples
-            startActivity(Intent(this@MainActivity, sample.mClass))
+            startActivity(Intent(this@CustomViewActivity, sample.mClass))
         }
     }
 }

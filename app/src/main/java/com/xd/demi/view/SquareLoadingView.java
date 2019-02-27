@@ -654,7 +654,9 @@ public class SquareLoadingView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mAnimatorSet.removeAllListeners();
-        mAnimatorSet.cancel();
+        if(mAnimatorSet != null){
+            mAnimatorSet.removeAllListeners();
+            mAnimatorSet.cancel();
+        }
     }
 }

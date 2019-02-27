@@ -191,8 +191,10 @@ public class FloatLoadingView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        valueAnimator.removeAllUpdateListeners();
-        valueAnimator.cancel();
+        if(valueAnimator != null){
+            valueAnimator.removeAllUpdateListeners();
+            valueAnimator.cancel();
+        }
     }
 
     private class MoveOval {
