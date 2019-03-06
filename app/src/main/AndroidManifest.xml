@@ -78,6 +78,9 @@
         <activity android:name=".activity.WaitIngActivity"/>
         <activity android:name=".activity.HelloJNIActivity"/>
         <activity android:name=".activity.CustomViewActivity"/>
+        <activity android:name=".activity.InviteCodeActivity"
+                  android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:name=".activity.TestActivity"/>
     </application>
 
 </manifest>

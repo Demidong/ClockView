@@ -79,4 +79,11 @@
         <attr name="fixBlock_Angle" format="float"/>
         <attr name="move_Interpolator" format="reference"/>
     </declare-styleable>
+    <declare-styleable name="InviteCodeView">
+        <attr name="gapWidth" format="dimension"/>
+        <attr name="squareNum" format="integer"/>
+        <attr name="squareWidth" format="dimension"/>
+        <attr name="isDrawNumber" format="boolean"/>
+        <attr name="numberTextSize" format="dimension"/>
+    </declare-styleable>
 </resources>

@@ -11,13 +11,12 @@ import com.xd.demi.adapter.DividerItemDecoration
 import com.xd.demi.adapter.SamplesAdapter
 import com.xd.demi.bean.Samples
 import kotlinx.android.synthetic.main.activity_main.*
-import org.joda.time.DateTime
 import java.util.*
 
 
 class CustomViewActivity : Activity() {
-    private var clazz = arrayOf(WaitIngActivity::class.java,TrendActivity::class.java,LoveActivity::class.java,ScrollerActivity::class.java,ViewDragHelperActivity::class.java, LineChartActivity::class.java,  PieChatActivity::class.java, ClockActivity::class.java, CoordinateActivity::class.java,  ShopCarActivity::class.java, CameraActivity::class.java,  TimeConutDownActivity::class.java,  ViewPagerActivity::class.java,   PercentActivity::class.java,  WaveActivity::class.java,  SelfDefinedActivity::class.java, FlowLayoutActivity::class.java, InputEmojiActivity::class.java)
-    private var describle = arrayOf("WaitIngActivity","TrendActivity","LoveActivity","Scroller","ViewDragHelper","LineChartActivity", "水果大拼盘", "时钟表盘", "坐标系",  "购物车动画", "照相机", "倒计时", "ViewPager", "圆环百分比",  "雷达波浪View",  "SelfDefinedActivity", "FlowLayoutActivity", "InputEmojiActivity")
+    private var clazz = arrayOf(InviteCodeActivity::class.java, WaitIngActivity::class.java, TrendActivity::class.java, LoveActivity::class.java, ScrollerActivity::class.java, ViewDragHelperActivity::class.java, LineChartActivity::class.java, PieChatActivity::class.java, ClockActivity::class.java, CoordinateActivity::class.java, ShopCarActivity::class.java, CameraActivity::class.java, TimeConutDownActivity::class.java, ViewPagerActivity::class.java, PercentActivity::class.java, WaveActivity::class.java, SelfDefinedActivity::class.java, FlowLayoutActivity::class.java, InputEmojiActivity::class.java)
+    private var describle = arrayOf("InviteCodeActivity", "WaitIngActivity", "TrendActivity", "LoveActivity", "Scroller", "ViewDragHelper", "LineChartActivity", "水果大拼盘", "时钟表盘", "坐标系", "购物车动画", "照相机", "倒计时", "ViewPager", "圆环百分比", "雷达波浪View", "SelfDefinedActivity", "FlowLayoutActivity", "InputEmojiActivity")
     private var sampleList = ArrayList<Samples>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
